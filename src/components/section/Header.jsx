@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { nav, social } from "@/lib/data/navigation";
+import { nav, social } from "@/data/navigation";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
@@ -13,10 +13,10 @@ const Header = () => {
     console.log(isActive);
   });
   return (
-    <div className="red fixed z-[999] flex h-16 w-screen items-center justify-between px-10 ">
-      <div className="text-2xl mix-blend-difference">
-        <h1 className="font-black">
-          <Link href={"/"}>TG</Link>
+    <div className="redd fixed z-[999] flex h-16 w-screen items-center justify-between px-10">
+      <div className="text-2xl text-white">
+        <h1 className="font-black mix-blend-difference">
+          <Link className="" href={"/"}>TG</Link>
         </h1>
       </div>
       <div className="hidden h-10 items-center justify-evenly rounded-3xl border font-medium tablet:flex tablet:w-[25rem] laptop:w-[35rem]">
@@ -49,7 +49,7 @@ function Nav({ active, setActive }) {
   return (
     <>
       <div className="fixed right-3 top-3 flex h-96 w-[20rem] flex-col items-start justify-evenly gap-20 rounded-lg bg-white p-2 py-4 text-2xl text-black transition-transform">
-        <div className="flex h-full w-full flex-col items-start justify-evenly px-20">
+        <div className="flex  h-full w-full flex-col items-start justify-evenly px-20">
           {nav.map((data, idx) => {
             return (
               <Route
@@ -63,7 +63,7 @@ function Nav({ active, setActive }) {
           })}
         </div>
         <div className="flex h-36 w-full flex-col items-center justify-evenly gap-1 text-xl">
-          <h1 className="h-16">navigation</h1>
+          <h1 className="h-16">Social</h1>
           <div className="flex h-full w-full items-center justify-evenly">
             {social.map((data, idx) => {
               return <Route key={idx} data={data} />;
