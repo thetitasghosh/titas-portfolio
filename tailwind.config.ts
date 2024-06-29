@@ -22,6 +22,9 @@ const config = {
       colors: {
         myBlue: "#0466c8",
       },
+      // fontFamily:{
+      //   sans:['var(--RethinkSan)']
+      // },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

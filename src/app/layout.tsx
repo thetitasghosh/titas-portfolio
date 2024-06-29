@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/lib/ThemeProvider";
-import { Inter } from "next/font/google";
+import { Rethink_Sans } from "next/font/google";
+
 import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={RethinkSan.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
