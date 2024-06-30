@@ -1,24 +1,28 @@
 import React from "react";
-import Image from "next/image";
-import Titas from "../../../public/assets/img/pic.jpg";
+
 const HeroSection = () => {
   return (
-    <main className="redd flex h-screen w-screen items-end justify-center p-2">
-      <div className="redd flex h-[90%] gap-2 w-full flex-col items-center justify-evenly">
-        <div>
-          <h1 className="text-5xl font-bold">TITAS GHOSH</h1>
+    <div className="redd flex h-screen w-screen flex-col items-center justify-center px-6">
+      <div className="redd flex flex-col items-center justify-end h-80 w-full text-6xl font-semibold ">
+        <div className="redd flex h-16 w-full items-center justify-start">
+          <h1>CRTV</h1>
         </div>
-        <div className="w-full flex justify-center redd">
-          <Image className="size-72 rounded-xl" src={Titas} width={200} alt="Titas Ghosh" />
+        <div className="redd flex h-16 w-full items-center justify-start">
+          <h1>DEVELOPER</h1>
         </div>
-        <div className="w-full text-6xl">
-          <h1 className="w-full text-right ">CRTV</h1>
-          <h1 className="w-full text-right ">DEVELOPER</h1>
-          <h1 className="w-full text-center ">BASED IN</h1>
-          <h1 className="w-full text-center ">INDIA.</h1>
+        <div className="redd flex h-16 w-full items-center justify-end">
+          <h1>DESIGNER</h1>
         </div>
       </div>
-    </main>
+      <div className="redd flex h-32 w-full items-center justify-between">
+        <h1 className="redd flex h-full items-end justify-center">©2024</h1>
+        <div className="redd flex h-full w-full items-center justify-end">
+          <div className="redd h-full w-[15rem] flex items-end justify-center text-left">
+            Helping brand in this digital worlds for their help 10x faster 
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
