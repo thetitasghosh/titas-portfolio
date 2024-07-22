@@ -3,8 +3,8 @@ import React from "react";
 const HeroSection = () => {
   return (
     <div className="reddd flex h-screen w-screen flex-col items-center justify-center px-6">
-      <div className="red w-full">
-        <div className="red flex h-80 w-[90vw] flex-col items-center justify-end font-semibold tablet:h-[30rem] tablet:w-[70vw] laptop:h-96 laptop:w-[80vw] desktop:h-[30rem] desktop:w-[65rem] desktop:justify-center">
+      <div className="redd w-full">
+        <div className="redd flex h-80 w-[90vw] flex-col items-center justify-end font-semibold tablet:h-[30rem] tablet:w-[70vw] laptop:h-96 laptop:w-[80vw] desktop:h-[30rem] desktop:w-[65rem] desktop:justify-center">
           <div className="redd flex h-16 w-full items-center justify-start laptop:h-24">
             <h1 className="text-6xl tablet:text-[10vw] laptop:text-8xl desktop:text-[8rem]">
               <em>CREATIVE</em> <em>★</em>

@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { nav, social } from "@/data/navigation";
+import { motion } from "framer-motion";
+import { NavbarVarients, NavbarItem } from "@/lib/anim/animation";
+
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   useEffect(() => {
@@ -10,7 +13,7 @@ const Header = () => {
     } else {
       document.body.style = "overflow-y:auto";
     }
-    console.log(isActive);
+    // console.log(isActive);
   });
   return (
     <>
@@ -43,25 +46,41 @@ const Header = () => {
           {isActive ? "close" : "menu"}
         </div>
       </div>
-      <div>{isActive && <Nav active={isActive} setActive={setIsActive} />}</div>
+      <div>{<Nav active={isActive} setActive={setIsActive} />}</div>
     </>
   );
 };
 
 function Nav({ active, setActive }) {
+
+  //TODO : Add New Navbar or Fix existing Navbar
   return (
     <>
-      <div className="fixed right-3 top-3 z-[99] flex h-96 w-[20rem] flex-col items-start justify-evenly gap-20 rounded-lg bg-white p-2 py-4 text-2xl text-black transition-transform">
+      <motion.div
+        variants={NavbarVarients}
+        initial="close"
+        animate={active ? "open" : "close"}
+        className="fixed z-[99] flex flex-col items-start justify-evenly gap-20 rounded-lg bg-white p-2 py-4 text-2xl text-black"
+      >
         <div className="flex h-full w-full flex-col items-start justify-evenly px-20">
           {nav.map((data, idx) => {
             return (
-              <Route
-                onClick={() => {
-                  setActive(!active);
-                }}
+              <motion.div
+                variants={NavbarItem}
+                initial="init"
+                custom={idx}
+                animate="enter"
+                exit="exit"
+                className="redd text-3xl font-medium"
                 key={idx}
-                data={data}
-              />
+              >
+                <Route
+                  onClick={() => {
+                    setActive(!active);
+                  }}
+                  data={data}
+                />
+              </motion.div>
             );
           })}
         </div>
@@ -69,11 +88,22 @@ function Nav({ active, setActive }) {
           <h1 className="h-16">Social</h1>
           <div className="flex h-full w-full items-center justify-evenly">
             {social.map((data, idx) => {
-              return <Route key={idx} data={data} />;
+              return (
+                <motion.div
+                  variants={NavbarItem}
+                  initial="init"
+                  custom={idx}
+                  animate="enter"
+                  exit="exit"
+                  key={idx}
+                >
+                  <Route data={data} />
+                </motion.div>
+              );
             })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
@@ -83,7 +113,7 @@ function Route({ data, onClick }) {
   return (
     <div onClick={onClick}>
       <Link target={data.terget} href={data.route}>
-        <div className="">{data.label || data.icon}</div>
+        <div className="redd">{data.label || data.icon}</div>
       </Link>
     </div>
   );
