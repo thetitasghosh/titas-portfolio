@@ -1,5 +1,5 @@
 "use client";
-import Titas from "../../../public/assets/img/pic.jpg";
+// import Titas from "../../../public/assets/profile/pic.jpg";
 import React, { useState } from "react";
 import { social } from "@/data/navigation";
 import { V } from "@/constant/version";
