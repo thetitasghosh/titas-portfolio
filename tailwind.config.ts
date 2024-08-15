@@ -21,6 +21,8 @@ const config = {
     extend: {
       colors: {
         myBlue: "#0466c8",
+        BlueRibbon: "#0E3EEC",
+        DodgerBlue: "#2C75FF",
       },
       // fontFamily:{
       //   sans:['var(--RethinkSan)']
