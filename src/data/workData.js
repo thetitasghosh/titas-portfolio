@@ -7,6 +7,7 @@ export const WORKS = [
     title: "3D Parallax Letter",
     type: "Web Development",
     date: "22.05.24",
+    url:""
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const WORKS = [
     title: "Floating Image Gallery",
     type: "Web Design",
     date: "22.05.24",
+    url:""
   },
   {
     id: 3,
@@ -25,5 +27,6 @@ export const WORKS = [
     title: "SVG Text Gooey Effect",
     type: "Web Design & Dev",
     date: "22.05.24",
+    url:""
   },
 ];

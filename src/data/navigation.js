@@ -3,8 +3,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 
 export const nav = [
-  { id: 1, label: "Home", route: "/" },
-  { id: 2, label: "About", route: "/about" },
+  // { id: 1, label: "Home", route: "/" },
+  { id: 1, label: "About", route: "/about" },
   { id: 2, label: "Lab", route: "/lab" },
   { id: 3, label: "Work", route: "/work" },
   { id: 4, label: "Contact", route: "/contact" },
