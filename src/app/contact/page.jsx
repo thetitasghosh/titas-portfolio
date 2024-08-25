@@ -1,13 +1,12 @@
 import React from "react";
- export const metadata = {
-   title: "Contact",
-   description: "...",
- };
-
+export const metadata = {
+  title: "Contact",
+  description: "...",
+};
 
 const page = () => {
   return (
-    <div className="w-screen min-h-screen flex items-center justify-center">
+    <div className="flex min-h-screen w-full items-center justify-center">
       <h1>Contact</h1>
     </div>
   );
