@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import React, { useRef, useState } from "react";
 
 const Shuffletext = () => {
@@ -34,14 +35,17 @@ const Shuffletext = () => {
     setText(TEXT);
   };
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <h1
-        className="redd rounded-md p-2 px-5 text-5xl uppercase"
+    <div className="redd flex h-screen w-full items-center justify-center overflow-hidden p-2">
+      <Button
         onMouseEnter={Shuffle}
         onMouseLeave={stopShuffle}
+        className="relative w-64 overflow-hidden"
       >
-        {text}
-      </h1>
+        <span className="relative z-10 font-mono text-xl text-BlueRibbon uppercase">
+          {" "}
+          {text}
+        </span>
+      </Button>
     </div>
   );
 };
