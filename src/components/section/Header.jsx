@@ -15,7 +15,7 @@ const Header = () => {
 function Logo() {
   return (
     <div className="redd text-2xl font-bold">
-      <Link href={"/"}>Titas</Link>
+      <Link href={"/"}>Titas G.</Link>
     </div>
   );
 }
