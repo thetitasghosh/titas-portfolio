@@ -11,9 +11,9 @@ const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     template: "%s | Titas Ghosh",
-    default: "Titas Ghosh ",
+    default: "Titas Ghosh | An Artistic Explorer",
   },
-  description: "A Creative Developer",
+  description: "A Creative Developer & an Artistic Explorer",
 };
 
 export default function RootLayout({

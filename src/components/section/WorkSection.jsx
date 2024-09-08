@@ -3,7 +3,7 @@ import { WORKS } from "@/data/workData";
 import Card from "@/components/ui/Card";
 const WorkSection = () => {
   return (
-    <div className="red flex min-h-screen w-full flex-col items-center justify-center p-2">
+    <div className="redd flex min-h-screen w-full flex-col items-center justify-center p-2">
       <div>
         <h1>Work Section</h1>
       </div>

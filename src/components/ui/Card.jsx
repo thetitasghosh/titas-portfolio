@@ -5,13 +5,13 @@ import React from "react";
 const Card = ({ data }) => {
   return (
     <Link href={`/work/${data.slug}`}>
-      <div className="red flex h-96 w-96 flex-col items-center justify-center rounded-md p-5 py-5">
-        <div className="h-full w-full">
+      <div className="redd bg-Darkgrey flex h-60 w-96 flex-col items-center justify-between rounded-lg p-2 ">
+        <div className="h-44 overflow-hidden rounded-md w-full">
           <Image
             src={data.img}
             width={1000}
             height={500}
-            className="w-full"
+            className="w-full h-full"
             alt="Titas Portfolio Projects"
           />
         </div>

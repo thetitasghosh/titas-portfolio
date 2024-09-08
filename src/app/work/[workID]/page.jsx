@@ -13,7 +13,7 @@ export default function ItemPage({ params }) {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center">
+    <div className="flex h-screen w-full bg-black flex-col items-center justify-center">
       <h1>Title:{workitem.title}</h1>
       <p>Type:{workitem.type}</p>
     </div>

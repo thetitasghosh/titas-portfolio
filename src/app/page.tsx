@@ -6,6 +6,7 @@ import AboutSection from "@/components/section/AboutSection";
 import WorkSection from "@/components/section/WorkSection";
 import ContactSection from "@/components/section/ContactSection";
 import { useEffect } from "react";
+import DotBg from '@/lib/DotBg'
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -17,8 +18,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen w-full px-2  flex-col items-center justify-center font-sans">
+    <main className="flex min-h-screen w-full px-2 bg-black  flex-col items-center justify-center font-sans">
+      <DotBg>
+
       <HeroSection />
+      </DotBg>
       <AboutSection />
       <WorkSection />
       <ContactSection />
