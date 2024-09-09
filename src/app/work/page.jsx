@@ -9,7 +9,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="flex min-h-screen bg-black w-full items-center justify-center">
+    <div className="flex min-h-screen w-full items-center justify-center bg-black">
       <h1>
         Works:
         {WORKS.map((data) => {

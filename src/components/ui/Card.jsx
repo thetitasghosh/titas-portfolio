@@ -5,7 +5,7 @@ import React from "react";
 const Card = ({ data }) => {
   return (
     <Link href={`/work/${data.slug}`}>
-      <div className="redd bg-Darkgrey flex h-60 w-96 flex-col items-center justify-between rounded-lg p-2 ">
+      <div className="redd bg-Darkgrey shadow-xl shadow-neutral-950 flex h-60 w-96 flex-col items-center justify-between rounded-lg p-2 ">
         <div className="h-44 overflow-hidden rounded-md w-full">
           <Image
             src={data.img}
