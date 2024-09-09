@@ -8,11 +8,13 @@ import Image from "next/image";
 const Header = () => {
   const [active, setActive] = useState(true);
   return (
-    <div className="redd fixed top-0 z-40 flex h-14 w-full items-center justify-between px-8 text-2xl font-bold mix-blend-difference desktop:px-20">
-      <Logo />
-      <Nav nav={nav} />
+    <>
+      <div className="redd fixed top-0 z-40 flex h-14 w-full items-center justify-between px-8 text-2xl font-bold mix-blend-difference desktop:px-20">
+        <Logo />
+        <Nav nav={nav} />
+      </div>
       <NavBar active={active} setactive={setActive} data={nav} />
-    </div>
+    </>
   );
 };
 
@@ -40,24 +42,24 @@ function Nav({ nav }) {
 function NavBar({ data, active, setactive }) {
   return (
     <>
-      <div
-        onClick={() => setactive(!active)}
-        className="redd relative laptop:hidden"
-      >
-        <div className="z-50">
+      <div className="fixed top-4 right-5">
+        <div
+          onClick={() => setactive(!active)}
+          className="redd relative laptop:hidden"
+        >
+          <div className="z-50">
+            {active ? (
+              <Menu className="text-black" />
+            ) : (
+              <X className="text-black" />
+            )}
+          </div>
           {active ? (
-            <Menu className="mix-blend-difference" />
+            ""
           ) : (
-            <X className="mix-blend-difference" />
+            <div className="absolute right-0 top-0 h-96 w-80 rounded-2xl bg-white"></div>
           )}
         </div>
-        {active ? (
-          ""
-        ) : (
-          <div className="absolute right-0 top-0  h-96 w-80 rounded-2xl bg-white">
-
-          </div>
-        )}
       </div>
     </>
   );

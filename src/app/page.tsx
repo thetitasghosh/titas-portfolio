@@ -18,11 +18,11 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen w-full px-2 bg-black  flex-col items-center justify-center font-sans">
-      <DotBg>
+    <main className="flex min-h-screen w-full px-2 bg-AthensGray  flex-col items-center justify-center font-sans">
+      {/* <DotBg> */}
 
       <HeroSection />
-      </DotBg>
+      {/* </DotBg> */}
       <AboutSection />
       <WorkSection />
       <ContactSection />
