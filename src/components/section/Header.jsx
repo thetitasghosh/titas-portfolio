@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { nav } from "@/data/navigation";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 // import { Close } from "@radix-ui/react-toast";
 const Header = () => {
@@ -42,22 +43,32 @@ function Nav({ nav }) {
 function NavBar({ data, active, setactive }) {
   return (
     <>
-      <div className="fixed top-4 right-5">
+      <div className="redd fixed right-5 top-4 z-[999] laptop:hidden">
         <div
           onClick={() => setactive(!active)}
-          className="redd relative laptop:hidden"
+          className="redd relative z-[100]"
         >
-          <div className="z-50">
+          <div className="cursor-pointer mix-blend-difference">
             {active ? (
-              <Menu className="text-black" />
+              <Menu className="mix-blend-difference" />
             ) : (
-              <X className="text-black" />
+              <X className="mix-blend-difference" />
             )}
           </div>
           {active ? (
             ""
           ) : (
-            <div className="absolute right-0 top-0 h-96 w-80 rounded-2xl bg-white"></div>
+            <div className="absolute right-0 top-0 z-[199] h-[30rem] w-72 rounded-2xl bg-Darkgrey p-5">
+              <div className="redd flex h-full w-full flex-col items-center justify-center gap-2">
+                {data.map((itm, i) => {
+                  return (
+                    <div key={i}>
+                      <Link href={itm.route}>{itm.label}</Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           )}
         </div>
       </div>

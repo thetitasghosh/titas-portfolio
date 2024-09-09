@@ -7,7 +7,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center">
+    <div className="flex min-h-screen w-full items-center justify-center bg-black">
       <h1>About</h1>
     </div>
   );

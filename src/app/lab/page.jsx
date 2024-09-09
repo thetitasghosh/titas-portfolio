@@ -1,6 +1,7 @@
 import React from "react";
 import { Experimants } from "../../data/labData";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 export const metadata = {
   title: "Lab",
   description: "...",
