@@ -29,6 +29,9 @@ const config = {
         BlueRibbon: "#0E3EEC",
         DodgerBlue: "#2C75FF",
         Darkgrey: "#171717",
+        ScienceBlue: "#0071E3",
+        ScienceBlueDark: "#0156CF",
+        AthensGray: "#F2F2F4",
       },
       // fontFamily:{
       //   sans:['var(--RethinkSan)']
