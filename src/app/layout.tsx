@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/ThemeProvider";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Rethink_Sans,
   Space_Mono,
@@ -40,6 +41,7 @@ export default function RootLayout({
           >
             <Header />
             {children}
+            <Analytics/>
             <Footer />
           </ThemeProvider>
         </body>
