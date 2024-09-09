@@ -12,20 +12,17 @@ export const nav = [
 export const social = [
   {
     id: 1,
-    icon: <FaGithub className="w-full h-full" />,
-    terget: "_blank",
+    icon: <FaGithub className="h-full w-full" />,
     route: "https://github.com/thetitasghosh",
   },
   {
     id: 2,
-    icon: <FaXTwitter className="w-full h-full" />,
-    terget: "_blank",
+    icon: <FaXTwitter className="h-full w-full" />,
     route: "https://twitter.com/thetitasghosh",
   },
   {
     id: 3,
-    icon: <FaInstagram className="w-full h-full" />,
-    terget: "_blank",
-    route: "https://twitter.com/thetitasghosh",
+    icon: <FaInstagram className="h-full w-full" />,
+    route: "https://instagram.com/thetitasghosh",
   },
 ];
