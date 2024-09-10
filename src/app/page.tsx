@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-center bg-AthensGray px-2 ">
+    <main className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-2">
       <HeroSection />
 
       <AboutSection />

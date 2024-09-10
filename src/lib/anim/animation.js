@@ -1,9 +1,9 @@
 export const NavbarVarients = {
   open: {
-    width: "20rem",
-    height: "24rem",
-    top: "15px",
-    right: "35px",
+    //
+    translateX: "0rem",
+    top: "25px",
+    right: "5px",
     // opacity: 1,
     display: "flex",
     transition: { duration: 0.75, type: "tween", ease: [0.76, 0, 0.24, 1] },
@@ -11,10 +11,10 @@ export const NavbarVarients = {
   close: {
     // width: "4.5rem",
     // height: "1rem",
-    width: "0rem",
-    height: "0rem",
-    top: "15px",
-    right: "35px",
+    translateX: "50rem",
+
+    top: "25px",
+    right: "5px",
     // opacity: 0,
     display: "none",
     transition: {

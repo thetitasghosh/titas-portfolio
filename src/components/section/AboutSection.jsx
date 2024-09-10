@@ -28,7 +28,7 @@ const AboutSection = () => {
   return (
     <div
       ref={cont}
-      className="redd flex h-[30rem] w-full text-Darkgrey flex-col items-center justify-center  p-2"
+      className="redd flex h-[30rem] w-full text-AthensGray flex-col items-center justify-center  p-2"
     >
       <div className="desktop:w-1/2 px-4  redd text-justify desktop:text-center">
         <h1 className="text desktop:text-3xl text-2xl  font-bold">

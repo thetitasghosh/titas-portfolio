@@ -3,9 +3,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import {
-  Rethink_Sans,
-  Space_Mono,
-  DM_Sans,
+ Space_Grotesk,
   Inclusive_Sans,
 } from "next/font/google";
 
@@ -15,6 +13,7 @@ import "./globals.css";
 
 // const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
 const RethinkSan = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
+const Space = Space_Grotesk({  subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +31,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={RethinkSan.className}>
+        <body className={Space.className}>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"

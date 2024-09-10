@@ -7,7 +7,7 @@ export const metadata = {
 const page = () => {
   return (
     <div className="flex min-h-screen w-full items-center justify-center bg-black">
-      <h1>Contact</h1>
+      <h1 className="desktop:text-9xl text-5xl font-black text-ScienceBlue">Contact</h1>
     </div>
   );
 };

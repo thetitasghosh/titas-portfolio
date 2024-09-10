@@ -41,7 +41,7 @@ export default function ItemPage({ params }) {
           alt="projects"
           width={1000}
           height={1000}
-          className="h-full w-full object-contain"
+          className="-z-50 h-full w-full object-contain"
         />
       </div>
     </div>

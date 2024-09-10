@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { nav } from "@/data/navigation";
 import { Menu, X } from "lucide-react";
 // import Link from "next/link";
+import { NavbarVarients } from "@/lib/anim/animation";
+import { motion } from "framer-motion";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 // import { Close } from "@radix-ui/react-toast";
@@ -10,7 +12,7 @@ const Header = () => {
   const [active, setActive] = useState(true);
   return (
     <>
-      <div className="redd fixed top-0 z-40 flex h-14 w-full items-center justify-between px-8 text-2xl font-bold mix-blend-difference desktop:px-20">
+      <div className="redd fixed top-0 z-[100] flex h-14 w-full items-center justify-between px-8 text-2xl font-bold mix-blend-difference desktop:px-20">
         <Logo />
         <Nav nav={nav} />
       </div>
@@ -55,21 +57,23 @@ function NavBar({ data, active, setactive }) {
               <X className="mix-blend-difference" />
             )}
           </div>
-          {active ? (
-            ""
-          ) : (
-            <div className="absolute right-0 top-0 z-[199] h-[30rem] w-72 rounded-2xl bg-Darkgrey p-5">
-              <div className="redd flex h-full w-full flex-col items-center justify-center gap-2">
-                {data.map((itm, i) => {
-                  return (
-                    <div key={i}>
-                      <Link href={itm.route}>{itm.label}</Link>
-                    </div>
-                  );
-                })}
-              </div>
+
+          <motion.div
+            variants={NavbarVarients}
+            initial="close"
+            animate={active ? "close" : "open"}
+            className="absolute right-0 top-0 z-[199] h-[30rem] w-72 rounded-2xl bg-Darkgrey p-5"
+          >
+            <div className="redd flex h-full w-full flex-col items-start pl-10 text-3xl font-semibold justify-center gap-2">
+              {data.map((itm, i) => {
+                return (
+                  <div key={i}>
+                    <Link href={itm.route}>{itm.label}</Link>
+                  </div>
+                );
+              })}
             </div>
-          )}
+          </motion.div>
         </div>
       </div>
     </>
