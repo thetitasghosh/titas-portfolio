@@ -2,20 +2,18 @@ import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
-import {
- Space_Grotesk,
-  Inclusive_Sans,
-} from "next/font/google";
+import { Space_Grotesk, Inclusive_Sans } from "next/font/google";
 
 import Header from "@/components/section/Header";
 import Footer from "@/components/section/Footer";
 import "./globals.css";
 
 // const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
-const RethinkSan = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
-const Space = Space_Grotesk({  subsets: ["latin"] });
+// const RethinkSan = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
+const Space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://titasghosh.vercel.app/"),
   title: {
     template: "%s | Titas Ghosh",
     default: "Titas Ghosh | An Artistic Explorer",
@@ -40,7 +38,7 @@ export default function RootLayout({
           >
             <Header />
             {children}
-            <Analytics/>
+            <Analytics />
             <Footer />
           </ThemeProvider>
         </body>
