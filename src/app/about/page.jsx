@@ -1,15 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
- export const metadata = {
-   title: "About",
-   description: "...",
- };
+export const metadata = {
+  title: "About",
+  description: "...",
+};
 
 const page = () => {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-black">
-      <h1>About</h1>
-    </div>
+    <div className="flex h-screen w-full items-center justify-center bg-black"></div>
   );
 };
 

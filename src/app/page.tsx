@@ -1,4 +1,5 @@
 "use client";
+import Preloader from "@/lib/Preloader";
 import { Button } from "@/components/ui/button";
 import Lenis from "lenis";
 import HeroSection from "@/components/section/HeroSection";
@@ -6,7 +7,7 @@ import AboutSection from "@/components/section/AboutSection";
 import WorkSection from "@/components/section/WorkSection";
 import ContactSection from "@/components/section/ContactSection";
 import { useEffect } from "react";
-import DotBg from "@/lib/DotBg";
+// import DotBg from "@/lib/DotBg";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis();
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-2">
+      {/* <Preloader/> */}
       <HeroSection />
 
       <AboutSection />
