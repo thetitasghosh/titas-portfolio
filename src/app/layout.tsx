@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
-import { Space_Grotesk, Inclusive_Sans } from "next/font/google";
-
-import Header from "@/components/section/Header";
-import Footer from "@/components/section/Footer";
+import { Space_Grotesk } from "next/font/google";
+import TabBar from "@/components/global/TabBar";
+// import Header from "@/components/section/Header";
+// import Footer from "@/components/section/Footer";
 import "./globals.css";
 
 // const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
@@ -37,10 +37,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
+            {/* <Header /> */}
             {children}
+            <TabBar />
             <Analytics />
-            <Footer />
+            {/* <Footer /> */}
           </ThemeProvider>
         </body>
       </html>

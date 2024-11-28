@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { Mail } from "lucide-react";
 
 export const nav = [
   // { id: 1, label: "Home", route: "/" },
@@ -25,5 +26,10 @@ export const social = [
     id: 3,
     icon: <FaInstagram className="h-full w-full" />,
     route: "https://instagram.com/thetitasghosh",
+  },
+  {
+    id: 4,
+    icon: <Mail className="h-full w-full" />,
+    route: "mailto:hello@titasghosh.com",
   },
 ];
