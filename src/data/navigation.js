@@ -14,21 +14,25 @@ export const nav = [
 export const social = [
   {
     id: 1,
+    label: "Github",
     icon: <FaGithub className="h-full w-full" />,
     route: "https://github.com/thetitasghosh",
   },
   {
     id: 2,
+    label: "X",
     icon: <FaXTwitter className="h-full w-full" />,
     route: "https://twitter.com/thetitasghosh",
   },
   {
     id: 3,
+    label: "Instagram",
     icon: <FaInstagram className="h-full w-full" />,
     route: "https://instagram.com/thetitasghosh",
   },
   {
     id: 4,
+    label: "Email",
     icon: <Mail className="h-full w-full" />,
     route: "mailto:hello@titasghosh.com",
   },

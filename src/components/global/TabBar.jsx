@@ -9,7 +9,7 @@ const TabBar = () => {
     >
       <div
         id="tab"
-        className="flex h-full w-64 items-center justify-between rounded-md border border-neutral-700 bg-neutral-900 p-1"
+        className="flex h-full w-52 items-center justify-between rounded-md border border-neutral-700 bg-neutral-900 p-1"
       >
         {social.map((data, i) => {
           return <TabIcon key={i} data={data} />;
@@ -23,7 +23,9 @@ export default TabBar;
 function TabIcon({ data }) {
   return (
     <div className="h-full w-10 rounded-md border border-neutral-800 p-1">
-      <Link href={data.route}>{data.icon}</Link>
+      <Link aria-label={data.label} href={data.route}>
+        {data.icon}
+      </Link>
     </div>
   );
 }

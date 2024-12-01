@@ -13,11 +13,11 @@ import "./globals.css";
 const Space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://titasghosh.vercel.app/"),
+  metadataBase: new URL("https://titasghosh.com/"),
   keywords: ["Front-end", "Titas Ghosh", "Creative Developer", "thetitasghosh"],
   title: {
     template: "%s | Titas Ghosh",
-    default: "Titas Ghosh | An Artistic Explorer",
+    default: "Titas Ghosh",
   },
   description: "A Creative Developer & an Artistic Explorer",
 };
