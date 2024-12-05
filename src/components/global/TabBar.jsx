@@ -23,7 +23,7 @@ export default TabBar;
 function TabIcon({ data }) {
   return (
     <div className="h-full w-10 rounded-md border border-neutral-800 p-1">
-      <Link aria-label={data.label} href={data.route}>
+      <Link aria-label={data.label} href={data.route} target="_blank">
         {data.icon}
       </Link>
     </div>
