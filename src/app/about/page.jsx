@@ -8,7 +8,9 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-black"></div>
+    <div className="flex h-screen w-full items-center justify-center pt-16">
+      <div id="container" className="container h-full red"></div>
+    </div>
   );
 };
 

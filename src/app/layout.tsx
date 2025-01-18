@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-import { ThemeProvider } from "@/lib/ThemeProvider";
+import { ThemeProvider } from "@/lib/helper/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import { Space_Grotesk } from "next/font/google";
 import TabBar from "@/components/global/TabBar";
-// import Header from "@/components/section/Header";
+import Header from "@/components/global/Header";
+import Footer from "@/components/global/Footer";
 // import Footer from "@/components/section/Footer";
 import "./globals.css";
 
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
   keywords: ["Front-end", "Titas Ghosh", "Creative Developer", "thetitasghosh"],
   title: {
     template: "%s | Titas Ghosh",
-    default: "Titas Ghosh",
+    default: "Titas Ghosh | Front-end Developer",
+    
   },
   description: "A Creative Developer & an Artistic Explorer",
 };
@@ -33,15 +35,15 @@ export default function RootLayout({
         <body className={Space.className}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            {/* <Header /> */}
+            <Header />
             {children}
-            <TabBar />
+            {/* <TabBar /> */}
             <Analytics />
-            {/* <Footer /> */}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

@@ -6,8 +6,8 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-black">
-      <h1 className="desktop:text-9xl text-5xl font-black text-ScienceBlue">Contact</h1>
+    <div className="flex h-screen w-full pt-16  items-center justify-center">
+      <div id="container" className="container red h-full border"></div>
     </div>
   );
 };
