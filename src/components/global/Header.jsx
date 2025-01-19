@@ -18,7 +18,7 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd fixed right-0 top-0 z-[9999] flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
+      className="redd fixed right-0 top-0 z-[999] flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
     >
       <div
         id="container"
@@ -28,7 +28,7 @@ const Header = () => {
           <div id="logo" className="redd h-11 font-medium">
             <Link
               href={"/"}
-              className="flex size-full items-center justify-center text-xl"
+              className="flex size-full items-center justify-center text-xl mix-blend-difference"
             >
               {/* <Image
                 src={"/assets/titas_sign.svg"}

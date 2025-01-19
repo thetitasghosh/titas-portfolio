@@ -15,8 +15,8 @@ const WorkSection = () => {
             className="flex resd items-center gap-2 px-2 text-neutral-500"
           >
             <h1 className="text-lg font-black desktop:text-3xl">Your Maker</h1>|
-            <h1 className="text-sm desktop:text-2xl">Design & Development</h1>|
-            <h1 className="text-sm desktop:text-2xl">2025</h1>
+            <h1 className="text-xs desktop:text-2xl">Design & Development</h1>|
+            <h1 className="text-xs desktop:text-2xl">2025</h1>
           </div>
           <div
             id="work-frame"

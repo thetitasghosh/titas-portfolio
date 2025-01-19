@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import HeroSection from "@/components/sections/hero-section";
 import AboutSection from "@/components/sections/about-section";
 import WorkSection from "@/components/sections/work-section";
+import ContactSection from "@/components/sections/contact-section";
 export default function Home() {
   const [isloading, setIsloading] = useState(true);
   useEffect(() => {
@@ -34,11 +35,12 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 selection:bg-neutral-100">
         <div
           id="container"
-          className="redd container h-full text-neutral-900 dark:text-neutral-100"
+          className="redd container h-full space-y-5 text-neutral-900 dark:text-neutral-100"
         >
           <HeroSection />
           <AboutSection />
           <WorkSection />
+          {/* <ContactSection /> */}
         </div>
       </main>
     </>
