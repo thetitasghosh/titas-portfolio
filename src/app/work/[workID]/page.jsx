@@ -1,5 +1,8 @@
+import { Button } from "@/components/ui/button";
 import { WORKS } from "@/data/workData";
+import WorkHeader from "@/components/Animation/work-header";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   const { workID } = params;
@@ -30,19 +33,106 @@ export default function ItemPage({ params }) {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-black">
-      <div className="redd z-50 flex h-full w-full justify-between px-5 pb-10 pt-52 mix-blend-exclusion desktop:items-end desktop:pt-0 desktop:text-5xl">
-        <h1>{workitem.title}</h1>
-        <p>{workitem.type}</p>
-      </div>
-      <div className="redd absolute h-full w-full">
-        <Image
-          src={workitem.img}
-          alt="projects"
-          width={1000}
-          height={1000}
-          className="-z-50 h-full w-full object-contain"
+    <div className="flex min-h-screen w-full items-center justify-center px-5 pt-16">
+      <div
+        id="container"
+        className="borderr container flex h-full flex-col items-center justify-center gap-5"
+      >
+        <WorkHeader
+          date={workitem.date}
+          site={workitem.site}
+          title={workitem.title}
+          service={workitem.service}
         />
+        <div
+          id="cover"
+          className="redd relative flex h-60 w-full items-center justify-center p-2 desktop:h-screen"
+        >
+          {" "}
+          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
+            {workitem.title}
+          </span> */}
+          <div
+            id="image-frame"
+            className="redd h-full w-full overflow-hidden rounded-md desktop:h-[95%]"
+          >
+            <Image
+              alt={workitem.title}
+              src={workitem.cover_img}
+              width={1000}
+              height={1000}
+              className="size-full object-contain"
+            />
+          </div>
+        </div>
+        <div
+          id="mock-up"
+          className="redd relative flex h-fit w-full items-center justify-center p-2"
+        >
+          {" "}
+          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
+            {workitem.title}
+          </span> */}
+          <div
+            id="image-frame"
+            className="redd h-[90%] w-full overflow-hidden rounded-md"
+          >
+            <Image
+              alt={workitem.title}
+              src={workitem.desktop_mock}
+              width={1000}
+              height={500}
+              className="redd h-full w-full object-contain"
+            />
+          </div>
+        </div>
+        <div
+          id="mock-up"
+          className="redd relative flex h-fit w-full items-center justify-center p-2"
+        >
+          {" "}
+          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
+            {workitem.title}
+          </span> */}
+          <div
+            id="image-frame"
+            className="redd h-[90%] w-full overflow-hidden rounded-md"
+          >
+            <Image
+              alt={workitem.title}
+              src={workitem.laptop_mock}
+              width={1000}
+              height={500}
+              className="redd h-full w-full object-contain"
+            />
+          </div>
+        </div>
+        {workitem.images.map((data, i) => {
+          return (
+            <div
+              key={i}
+              id="mock-up"
+              className="redd relative flex h-fit w-full items-center justify-center p-2"
+            >
+              {" "}
+              {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
+            {workitem.title}
+          </span> */}
+              <div
+                id="image-frame"
+                className="redd h-[90%] w-full overflow-hidden rounded-md"
+              >
+                <Image
+                  alt={""}
+                  src={data}
+                  width={1000}
+                  height={500}
+                  className="redd h-full w-full object-contain"
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

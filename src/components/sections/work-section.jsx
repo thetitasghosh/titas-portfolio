@@ -1,6 +1,8 @@
-import Image from "next/image";
+import { WORKS } from "@/data/workData";
 import React from "react";
+import WorkFrame from "@/components/Card/work-frame";
 import Cursor from "@/components/extensions/cursor";
+import Link from "next/link";
 
 const WorkSection = () => {
   return (
@@ -9,39 +11,20 @@ const WorkSection = () => {
         <h1>Recent Work ↴</h1>
       </div>
       <div id="works" className="redd h-full w-full p-2">
-        <Cursor title={"YourMaker"}>
-          <div id="work" className="space-y-2">
-            <div
-              id="title"
-              className="resd flex items-center gap-2 px-2 text-neutral-500"
-            >
-              <h1 className="text-lg font-black desktop:text-3xl">
-                Your Maker
-              </h1>
-              |
-              <h1 className="text-xs desktop:text-2xl">Design & Development</h1>
-              |<h1 className="text-xs desktop:text-2xl">2025</h1>
-            </div>
-            <div
-              id="work-frame"
-              className="redd relative h-60 w-full bg-orange-50 p-5 laptop:h-full laptop:p-28"
-            >
-              {" "}
-              <div
-                id="work-cover"
-                className="redd h-full w-full overflow-hidden rounded-md"
-              >
-                <Image
-                  src={"/assets/works/yourmaker/hero_section.png"}
-                  alt="works"
-                  width={1000}
-                  height={1000}
-                  className="size-full object-contain"
+        {WORKS.map((data, i) => {
+          return (
+            <Link key={i} href={`/work/${data.slug}`}>
+              <Cursor title={data.title}>
+                <WorkFrame
+                  date={data.date}
+                  service={data.service}
+                  title={data.title}
+                  cover_img={data.cover_img}
                 />
-              </div>
-            </div>
-          </div>
-        </Cursor>
+              </Cursor>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
