@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LenisScroll from "@/lib/helper/lenis-scroll";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/helper/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
@@ -19,7 +20,6 @@ export const metadata: Metadata = {
   title: {
     template: "%s | Titas Ghosh",
     default: "Titas Ghosh | Front-end Developer",
-    
   },
   description: "A Creative Developer & an Artistic Explorer",
 };
@@ -39,11 +39,13 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            {children}
-            {/* <TabBar /> */}
-            <Analytics />
-            <Footer />
+            <LenisScroll>
+              <Header />
+              {children}
+              {/* <TabBar /> */}
+              <Analytics />
+              <Footer />
+            </LenisScroll>
           </ThemeProvider>
         </body>
       </html>

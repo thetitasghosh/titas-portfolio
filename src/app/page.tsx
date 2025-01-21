@@ -2,7 +2,7 @@
 import Preloader from "@/lib/helper/Preloader";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence } from "framer-motion";
-import Lenis from "lenis";
+// import Lenis from "lenis";
 import { useEffect, useState } from "react";
 import HeroSection from "@/components/sections/hero-section";
 import AboutSection from "@/components/sections/about-section";
@@ -10,14 +10,14 @@ import WorkSection from "@/components/sections/work-section";
 import ContactSection from "@/components/sections/contact-section";
 export default function Home() {
   const [isloading, setIsloading] = useState(true);
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: any) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
+  // useEffect(() => {
+  //   const lenis = new Lenis();
+  //   function raf(time: any) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
+  //   requestAnimationFrame(raf);
+  // }, []);
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
