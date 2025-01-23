@@ -4,7 +4,7 @@ import React from "react";
 
 const LenisScroll = ({ children }) => {
   return (
-    <ReactLenis options={{ lerp: 0.1, }} root>
+    <ReactLenis options={{ lerp: 0.1 }} root>
       {children}
     </ReactLenis>
   );

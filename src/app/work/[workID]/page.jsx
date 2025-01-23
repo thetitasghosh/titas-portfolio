@@ -75,14 +75,15 @@ export default function ItemPage({ params }) {
           </span> */}
           <div
             id="image-frame"
-            className="redd h-[90%] w-full overflow-hidden rounded-md"
+            className="redd h-[50%] w-full overflow-hidden rounded-md"
           >
             <Image
               alt={workitem.title}
               src={workitem.desktop_mock}
               width={1000}
               height={500}
-              className="redd h-full w-full object-contain"
+              // style={{ height: "900px" }}
+              className="redd h-fit w-full object-contain laptop:h-[920px]"
             />
           </div>
         </div>
@@ -96,14 +97,15 @@ export default function ItemPage({ params }) {
           </span> */}
           <div
             id="image-frame"
-            className="redd h-[90%] w-full overflow-hidden rounded-md"
+            className="redd h-fit w-full overflow-hidden rounded-md"
           >
             <Image
               alt={workitem.title}
               src={workitem.laptop_mock}
               width={1000}
               height={500}
-              className="redd h-full w-full object-contain"
+              // style={{ height: "900px" }}
+              className="redd h-fit w-full object-contain laptop:h-[920px]"
             />
           </div>
         </div>
