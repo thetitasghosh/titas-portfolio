@@ -4,7 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/helper/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import { Space_Grotesk } from "next/font/google";
-import TabBar from "@/components/global/TabBar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 // import Footer from "@/components/section/Footer";
@@ -43,6 +43,7 @@ export default function RootLayout({
               <Header />
               {children}
               {/* <TabBar /> */}
+              <GoogleAnalytics gaId="G-71NWJY69F8" />
               <Analytics />
               <Footer />
             </LenisScroll>
