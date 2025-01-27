@@ -7,7 +7,6 @@ import { Space_Grotesk } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
-// import Footer from "@/components/section/Footer";
 import "./globals.css";
 
 // const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
@@ -42,7 +41,6 @@ export default function RootLayout({
             <LenisScroll>
               <Header />
               {children}
-              {/* <TabBar /> */}
               <GoogleAnalytics gaId="G-71NWJY69F8" />
               <Analytics />
               <Footer />
