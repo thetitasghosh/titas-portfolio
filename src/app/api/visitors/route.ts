@@ -20,7 +20,7 @@ export async function GET() {
       property: `properties/${propertyId}`,
       // dimensions: [{ name: "minutesAgo" }],
       minuteRanges: [
-        { name: "0-2 minutes ago", startMinutesAgo: 2, endMinutesAgo: 0 },
+        { name: "0-4 minutes ago", startMinutesAgo: 4, endMinutesAgo: 0 },
       ],
       metrics: [
         {
