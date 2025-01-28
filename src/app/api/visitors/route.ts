@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
+import { headers } from "next/headers";
 
 // 👇 Setting PropertyId
 const propertyId = process.env.GOOGLE_ANALYTICS_PROPERTY_ID;
@@ -34,7 +35,15 @@ export async function GET() {
 
     // Returning only activeUsers
     // return NextResponse.json({ response });
-    return NextResponse.json({ activeUsers });
+    return NextResponse.json(
+      { activeUsers },
+      {
+        headers: {
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+        },
+      },
+    );
   } catch (error) {
     console.error("Error fetching real-time active users:", error);
     return NextResponse.json(
