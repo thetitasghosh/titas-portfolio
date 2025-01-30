@@ -1,40 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
 
-// Initialize Redis client
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL!,
   token: process.env.UPSTASH_REDIS_REST_TOKEN!,
 });
 
-// Function to generate a unique user ID
-function getUserId(req: NextRequest) {
-  let userId = req.cookies.get("user_id")?.value; // Get existing user ID from cookie
+// Function to get or generate a unique session ID
+function getSessionId(req: NextRequest) {
+  let sessionId = req.cookies.get("session_id")?.value;
 
-  if (!userId) {
-    userId = crypto.randomUUID(); // Generate a new UUID
+  if (!sessionId) {
+    sessionId = crypto.randomUUID(); // Generate new session ID
   }
 
-  return userId;
+  return sessionId;
 }
 
 export function middleware(req: NextRequest) {
-  const userId = getUserId(req);
+  const sessionId = getSessionId(req);
   const timestamp = Date.now();
 
-  console.log(`[Middleware] Tracking visitor: ${userId}`);
+  console.log(`[Middleware] Tracking session: ${sessionId}`);
 
   queueMicrotask(async () => {
     try {
-      await redis.zadd("active_users", { score: timestamp, member: userId });
+      // Store session in Redis with a 2-minute expiration
+      await redis.set(`active_session:${sessionId}`, timestamp, { ex: 120 });
     } catch (error) {
       console.error("[Middleware] Redis Error:", error);
     }
   });
 
-  // Set the user ID in a cookie (valid for 2 minutes)
+  // Set session ID in cookie (valid for 2 minutes)
   const res = NextResponse.next();
-  res.cookies.set("user_id", userId, {
+  res.cookies.set("session_id", sessionId, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     maxAge: 120, // Expires in 2 minutes

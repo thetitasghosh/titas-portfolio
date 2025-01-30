@@ -10,14 +10,20 @@ import WorkSection from "@/components/sections/work-section";
 import ContactSection from "@/components/sections/contact-section";
 export default function Home() {
   const [isloading, setIsloading] = useState(true);
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-  //   function raf(time: any) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-  //   requestAnimationFrame(raf);
-  // }, []);
+  useEffect(() => {
+    const sendPing = () => {
+      fetch("/api/ping", {
+        method: "POST",
+        credentials: "include", // Send cookies
+      });
+    };
+
+    sendPing(); // Send first ping when page loads
+
+    const interval = setInterval(sendPing, 10000); // Send ping every 10s
+
+    return () => clearInterval(interval); // Stop pinging when user leaves
+  }, []);
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
