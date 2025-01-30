@@ -9,12 +9,13 @@ const redis = new Redis({
 
 export async function GET() {
   try {
-    // Get all active visitors (keys starting with "visitor:")
-    const keys = await redis.keys("visitor:*");
-
-    return NextResponse.json({ activeUsers: keys.length });
+    const activeUsers = await redis.zcount("active_users", "-inf", "+inf");
+    return NextResponse.json({ activeUsers });
   } catch (error) {
-    console.error("Redis Fetch Error:", error);
-    return NextResponse.json({ activeUsers: 0 }, { status: 500 });
+    console.error("[API] Redis Error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch active users" },
+      { status: 500 },
+    );
   }
 }
