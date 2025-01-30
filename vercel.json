@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/visitor": {
+        "api/visitors": {
             "maxDuration": 20
         }
     }
