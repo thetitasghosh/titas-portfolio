@@ -8,8 +8,14 @@ const redis = new Redis({
 
 export async function GET() {
   try {
-    const keys = await redis.keys("active_session:*"); // Get all active session keys
-    const activeUsers = keys.length; // Count unique active users
+    const timestamp = Date.now();
+    const twoMinutesAgo = timestamp - 60000; // 2 minutes in milliseconds
+
+    // Remove sessions that haven't been updated in the last 2 minutes
+    await redis.zremrangebyscore("active_sessions", 0, twoMinutesAgo);
+
+    // Count the number of active sessions
+    const activeUsers = await redis.zcount("active_sessions", "-inf", "+inf");
 
     return NextResponse.json({ activeUsers });
   } catch (error) {

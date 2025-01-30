@@ -18,8 +18,8 @@ export async function POST(req: NextRequest) {
   const timestamp = Date.now();
 
   try {
-    // Refresh session time in Redis
-    await redis.set(`active_session:${sessionId}`, timestamp, { ex: 120 });
+    // Update session timestamp in Redis to keep it alive
+    await redis.set(`active_session:${sessionId}`, timestamp, { ex: 60 });
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("[Ping API] Redis Error:", error);
