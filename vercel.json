@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/visitors": {
+        "app/api/visitors/route.ts": {
             "maxDuration": 20
         }
     }
