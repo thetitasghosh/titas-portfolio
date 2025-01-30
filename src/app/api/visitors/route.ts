@@ -1,29 +1,53 @@
 import { NextResponse } from "next/server";
-import { Redis } from "@upstash/redis";
+import { BetaAnalyticsDataClient } from "@google-analytics/data";
+import { headers } from "next/headers";
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+// 👇 Setting PropertyId
+const propertyId = process.env.GOOGLE_ANALYTICS_PROPERTY_ID;
+
+const analyticsDataClient = new BetaAnalyticsDataClient({
+  credentials: {
+    client_id: process.env.GOOGLE_CLIENT_ID,
+    client_email: process.env.GA_CLIENT_EMAIL,
+    client_secret: process.env.GOOGLE_CLIENT_SECRET_ID,
+    private_key: process.env.GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
+  },
 });
 
 export async function GET() {
   try {
-    const timestamp = Date.now();
-    const oneMinuteAgo = timestamp - 60000; // 1 minute in milliseconds
+    // 👇 Running a simple report
+    const [response] = await analyticsDataClient.runRealtimeReport({
+      property: `properties/${propertyId}`,
+      // dimensions: [{ name: "minutesAgo" }],
+      minuteRanges: [
+        { name: "0-4 minutes ago", startMinutesAgo: 4, endMinutesAgo: 0 },
+      ],
+      metrics: [
+        {
+          name: "activeUsers", // It returns the active users
+        },
+      ],
+    });
 
-    // Remove sessions older than 1 minute from the sorted set
-    await redis.zremrangebyscore("active_sessions", 0, oneMinuteAgo);
-    console.log(`[Active Users API] Removed old sessions`);
+    // Extracting activeUsers data
+    const activeUsers = response.rows?.[0]?.metricValues?.[0]?.value || "0";
 
-    // Count the number of active sessions (all members in the sorted set)
-    const activeUsers = await redis.zcount("active_sessions", "-inf", "+inf");
-    console.log(`[Active Users API] Active Users: ${activeUsers}`);
-
-    return NextResponse.json({ activeUsers });
-  } catch (error) {
-    console.error("[Active Users API] Redis Error:", error);
+    // Returning only activeUsers
+    // return NextResponse.json({ response });
     return NextResponse.json(
-      { error: "Failed to fetch active users" },
+      { activeUsers },
+      {
+        headers: {
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+        },
+      },
+    );
+  } catch (error) {
+    console.error("Error fetching real-time active users:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch real-time active Users" },
       { status: 500 },
     );
   }
