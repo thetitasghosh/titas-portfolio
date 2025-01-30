@@ -23,21 +23,26 @@ export function middleware(req: NextRequest) {
 
   console.log(`[Middleware] Tracking session: ${sessionId}`);
 
+  // Add a log for when session ID is being stored in Redis
   queueMicrotask(async () => {
     try {
-      // Store session in Redis with a 2-minute expiration (valid for 2 minutes)
-      await redis.set(`active_session:${sessionId}`, timestamp, { ex: 60 });
+      // Add session to a sorted set with current timestamp
+      await redis.zadd("active_sessions", {
+        score: timestamp,
+        member: sessionId,
+      });
+      console.log(`[Middleware] Stored session in Redis: ${sessionId}`);
     } catch (error) {
       console.error("[Middleware] Redis Error:", error);
     }
   });
 
-  // Set the session ID in cookie (valid for 2 minutes)
+  // Set the session ID in cookie (valid for 1 minute)
   const res = NextResponse.next();
   res.cookies.set("session_id", sessionId, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    maxAge: 60, // Expires in 2 minutes
+    maxAge: 60, // Expires in 1 minute
   });
 
   return res;

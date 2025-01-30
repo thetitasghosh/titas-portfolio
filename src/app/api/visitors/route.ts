@@ -9,13 +9,15 @@ const redis = new Redis({
 export async function GET() {
   try {
     const timestamp = Date.now();
-    const twoMinutesAgo = timestamp - 60000; // 2 minutes in milliseconds
+    const oneMinuteAgo = timestamp - 60000; // 1 minute in milliseconds
 
-    // Remove sessions that haven't been updated in the last 2 minutes
-    await redis.zremrangebyscore("active_sessions", 0, twoMinutesAgo);
+    // Remove sessions older than 1 minute from the sorted set
+    await redis.zremrangebyscore("active_sessions", 0, oneMinuteAgo);
+    console.log(`[Active Users API] Removed old sessions`);
 
-    // Count the number of active sessions
+    // Count the number of active sessions (all members in the sorted set)
     const activeUsers = await redis.zcount("active_sessions", "-inf", "+inf");
+    console.log(`[Active Users API] Active Users: ${activeUsers}`);
 
     return NextResponse.json({ activeUsers });
   } catch (error) {
