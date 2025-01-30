@@ -7,7 +7,7 @@ const redis = new Redis({
   token: process.env.UPSTASH_REDIS_REST_TOKEN!,
 });
 
-// Function to create a unique user identifier
+// Function to generate a unique user ID
 function getUserId(req: NextRequest) {
   let userId = req.cookies.get("user_id")?.value; // Get existing user ID from cookie
 
@@ -32,7 +32,15 @@ export function middleware(req: NextRequest) {
     }
   });
 
-  return NextResponse.next();
+  // Set the user ID in a cookie (valid for 2 minutes)
+  const res = NextResponse.next();
+  res.cookies.set("user_id", userId, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 120, // Expires in 2 minutes
+  });
+
+  return res;
 }
 
 // Apply middleware to all pages except API routes & static files
