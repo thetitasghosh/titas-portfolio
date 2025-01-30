@@ -9,11 +9,13 @@ const redis = new Redis({
 
 // Function to create a unique user identifier
 function getUserId(req: NextRequest) {
-  // const ip = req.ip ?? req.headers.get("x-forwarded-for") ?? "anonymous";
-  const userAgent = req.headers.get("user-agent") ?? "unknown-device";
+  let userId = req.cookies.get("user_id")?.value; // Get existing user ID from cookie
 
-  // return `${ip}-${userAgent}`; // Combine IP + User-Agent
-  return userAgent;
+  if (!userId) {
+    userId = crypto.randomUUID(); // Generate a new UUID
+  }
+
+  return userId;
 }
 
 export function middleware(req: NextRequest) {
