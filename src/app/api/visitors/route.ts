@@ -9,8 +9,8 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
   credentials: {
     client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
     client_email: process.env.NEXT_PUBLIC_GA_CLIENT_EMAIL,
-    client_secret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET_ID,
-    private_key: process.env.NEXT_PUBLIC_GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
+    client_secret: process.env.GOOGLE_CLIENT_SECRET_ID,
+    private_key: process.env.GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
   },
 });
 
