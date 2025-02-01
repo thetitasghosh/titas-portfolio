@@ -3,14 +3,14 @@ import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import { headers } from "next/headers";
 
 // 👇 Setting PropertyId
-const propertyId = process.env.GOOGLE_ANALYTICS_PROPERTY_ID;
+const propertyId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_PROPERTY_ID;
 
 const analyticsDataClient = new BetaAnalyticsDataClient({
   credentials: {
-    client_id: process.env.GOOGLE_CLIENT_ID,
-    client_email: process.env.GA_CLIENT_EMAIL,
-    client_secret: process.env.GOOGLE_CLIENT_SECRET_ID,
-    private_key: process.env.GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
+    client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+    client_email: process.env.NEXT_PUBLIC_GA_CLIENT_EMAIL,
+    client_secret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET_ID,
+    private_key: process.env.NEXT_PUBLIC_GA_PRIVATE_KEY?.replace(/\n/gm, "\n"), // replacing is necessary
   },
 });
 
