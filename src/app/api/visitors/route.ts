@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
-import { headers } from "next/headers";
 
 // 👇 Setting PropertyId
 const propertyId = process.env.GOOGLE_ANALYTICS_PROPERTY_ID;
