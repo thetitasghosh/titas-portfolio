@@ -45,7 +45,7 @@ const WorkHeader = ({ title, service, date, site }) => {
         whileInView={{ y: "0%", transition: { delay: 0.7, ease: "easeInOut" } }}
         viewport={{ once: true }}
       >
-        <Link href={site} className="redd">
+        <Link target="_blank" href={site} className="redd">
           <Button variant={"outline"} className="group gap-2">
             <Send className="group-hover:animate-bounce" /> Live site
           </Button>
