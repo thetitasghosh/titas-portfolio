@@ -67,3 +67,14 @@ export const BorderVarients = {
     },
   },
 };
+export const PreloaderSildeUp = {
+  init: {
+    top: 0,
+    right: 0,
+  },
+  exit: {
+    top: "-100vh",
+    right: 0,
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.5 },
+  },
+};

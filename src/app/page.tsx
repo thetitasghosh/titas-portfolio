@@ -35,9 +35,9 @@ export default function Home() {
   }, [isloading]);
   return (
     <>
-      {/* <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait">
         {isloading && <Preloader />}
-      </AnimatePresence> */}
+      </AnimatePresence>
       <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 selection:bg-neutral-100">
         <div
           id="container"
