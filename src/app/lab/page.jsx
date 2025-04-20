@@ -29,7 +29,7 @@ const Page = () => {
           {LABS.map((data, i) => (
             <LabDialog key={i} src={data.video} url={data.url}>
               <div className="overflow-hidden rounded-md p-1 shadow-md transition-transform duration-300 hover:scale-105">
-                <h1 className="w-full text-left redd p-1">{data.title}</h1>
+                <h1 className="redd w-full p-1 text-left">{data.title}</h1>
                 <Image
                   src={data.thumbnail}
                   alt={data.title || `Lab work ${i + 1}`}
@@ -66,6 +66,7 @@ function LabDialog({ children, src, url }) {
             className="h-full w-full object-cover"
           />
           <Link
+            target="_blank"
             className="absolute right-0 top-0 m-1 rounded-3xl bg-neutral-100 px-2 text-xs text-black"
             href={url}
           >
