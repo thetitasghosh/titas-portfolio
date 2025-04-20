@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { nav, social } from "@/data/navigation";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Button } from "../ui/button";
 const Header = () => {
@@ -18,26 +19,22 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd fixed right-0 top-0 z-[999] flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
+      className="redd fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
     >
       <div
         id="container"
         className="redd container flex h-full flex-col items-start justify-between gap-1 overflow-hidden rounded-md border px-2 backdrop-blur-md dark:border-neutral-900 dark:bg-neutral-800 tablet:px-5"
       >
         <div className="redd flex h-11 w-full items-center justify-between">
-          <div id="logo" className="redd h-11 font-medium">
+          <div
+            id="logo"
+            className="redd h-11 font-medium text-black mix-blend-difference dark:text-white"
+          >
             <Link
               href={"/"}
-              className="flex size-full items-center justify-center text-xl mix-blend-difference"
+              className="flex size-full items-center justify-center text-xl"
             >
-              {/* <Image
-                src={"/assets/titas_sign.svg"}
-                width={120}
-                height={100}
-                alt="Titas"
-                className="fill-black stroke-2 dark:fill-white"
-              /> */}
-              Titas Ghosh.
+              Titas Ghosh
             </Link>
           </div>
           <div id="menu-desktop" className="hidden gap-10 laptop:flex">

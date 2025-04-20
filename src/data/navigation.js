@@ -5,11 +5,11 @@ import { FaInstagram } from "react-icons/fa";
 
 export const nav = [
   // {  label: "Home", route: "/" },
-  { label: "About", route: "/about" },
+  // { label: "About", route: "/about" },
   // { label: "View", route: "/view" },
   { label: "Work", route: "/work" },
   { label: "Lab", route: "/lab" },
-  { label: "Contact", route: "/contact" },
+  // { label: "Contact", route: "/contact" },
 ];
 export const social = [
   {
