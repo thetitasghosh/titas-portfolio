@@ -15,7 +15,12 @@ const Space = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://titasghosh.com/"),
-  keywords: ["Front-end", "Titas Ghosh", "Creative Developer", "thetitasghosh"],
+  keywords: [
+    "Front-end Developer",
+    "Titas Ghosh",
+    "Creative Developer",
+    "thetitasghosh",
+  ],
   title: {
     template: "%s | Titas Ghosh",
     default: "Titas Ghosh | Front-end Developer",
