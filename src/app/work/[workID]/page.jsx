@@ -3,6 +3,7 @@ import { WORKS } from "@/data/workData";
 import WorkHeader from "@/components/Animation/work-header";
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export async function generateMetadata({ params }) {
   const { workID } = params;
@@ -33,10 +34,19 @@ export default function ItemPage({ params }) {
   }
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center px-5 pt-16">
+    <div
+      className={cn(
+        "flex min-h-screen w-full items-center justify-center px-5 pt-16",
+        // workitem.color === "yourmaker"
+        //   ? "via-yourmaker to-030% bg-gradient-to-tl from-white from-20% to-white"
+        //   : "bg-white",
+      )}
+    >
       <div
         id="container"
-        className="borderr container flex h-full flex-col items-center justify-center gap-5"
+        className={cn(
+          "borderr container flex h-full flex-col items-center justify-center gap-5",
+        )}
       >
         <WorkHeader
           date={workitem.date}
@@ -48,13 +58,9 @@ export default function ItemPage({ params }) {
           id="cover"
           className="redd relative flex h-60 w-full items-center justify-center p-2 desktop:h-screen"
         >
-          {" "}
-          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
-            {workitem.title}
-          </span> */}
           <div
             id="image-frame"
-            className="redd h-full w-full overflow-hidden rounded-md desktop:h-[95%]"
+            className="redd h-fit w-full overflow-hidden rounded-md"
           >
             <Image
               alt={workitem.title}
@@ -66,75 +72,79 @@ export default function ItemPage({ params }) {
           </div>
         </div>
         <div
-          id="mock-up"
-          className="redd relative flex h-fit w-full items-center justify-center p-2"
+          id="desktop-mock-up"
+          className="redd relative flex h-fit w-full flex-col items-center justify-center gap-10 p-2"
         >
-          {" "}
-          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
-            {workitem.title}
-          </span> */}
-          <div
-            id="image-frame"
-            className="redd h-[50%] w-full overflow-hidden rounded-md"
-          >
-            <Image
-              alt={workitem.title}
-              src={workitem.desktop_mock}
-              width={1000}
-              height={500}
-              // style={{ height: "900px" }}
-              className="redd h-fit w-full object-contain laptop:h-[920px]"
-            />
-          </div>
+          {workitem.desktop_mock.map((data, i) => {
+            return (
+              <div
+                key={i}
+                id="image-frame"
+                className="redd h-[50%] w-full overflow-hidden rounded-md"
+              >
+                <Image
+                  alt={""}
+                  src={data}
+                  width={1980}
+                  height={1080}
+                  // style={{ height: "900px" }}
+                  className="redd h-fit w-full object-contain laptop:h-[920px]"
+                />
+              </div>
+            );
+          })}
         </div>
         <div
-          id="mock-up"
-          className="redd relative flex h-fit w-full items-center justify-center p-2"
+          id="laptop-mock-up"
+          className="redd relative flex h-fit w-full flex-col items-center justify-center gap-10 p-2"
         >
-          {" "}
-          {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
-            {workitem.title}
-          </span> */}
-          <div
-            id="image-frame"
-            className="redd h-fit w-full overflow-hidden rounded-md"
-          >
-            <Image
-              alt={workitem.title}
-              src={workitem.laptop_mock}
-              width={1000}
-              height={500}
-              // style={{ height: "900px" }}
-              className="redd h-fit w-full object-contain laptop:h-[920px]"
-            />
-          </div>
-        </div>
-        {workitem.images.map((data, i) => {
-          return (
-            <div
-              key={i}
-              id="mock-up"
-              className="redd relative flex h-fit w-full items-center justify-center p-2"
-            >
-              {" "}
-              {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
-            {workitem.title}
-          </span> */}
+          {workitem.laptop_mock.map((data, i) => {
+            return (
               <div
+                key={i}
                 id="image-frame"
-                className="redd h-[90%] w-full overflow-hidden rounded-md"
+                className="redd h-fit w-full overflow-hidden rounded-md"
               >
                 <Image
                   alt={""}
                   src={data}
                   width={1000}
                   height={500}
-                  className="redd h-full w-full object-contain"
+                  // style={{ height: "900px" }}
+                  className="redd h-fit w-full object-contain laptop:h-[920px]"
                 />
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <div className="mb-10 flex h-full w-full items-center justify-around">
+          {workitem.mobile_mock.map((data, i) => {
+            return (
+              <div
+                key={i}
+                id="mock-up"
+                className="redd relative flex h-full w-full items-center justify-center p-2"
+              >
+                {" "}
+                {/* <span className="absolute z-[99] font-black text-white desktop:text-8xl">
+            {workitem.title}
+          </span> */}
+                <div
+                  id="image-frame"
+                  className="redd h-[30rem] w-full overflow-hidden rounded-md"
+                >
+                  <Image
+                    alt={""}
+                    src={data}
+                    width={1000}
+                    height={500}
+                    className="redd h-full w-full object-contain"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

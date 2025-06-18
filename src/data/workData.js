@@ -11,12 +11,18 @@ export const WORKS = [
     color: "yourmaker",
     cover_img: "/assets/works/yourmaker/hero_section.png",
     cover_video: "/assets/works/yourmaker/yourmaker-cover.webm",
-    desktop_mock: "/assets/works/yourmaker/desktop_mock.png",
-    laptop_mock: "/assets/works/yourmaker/laptop_mock.png",
-    images: [
-      "/assets/works/yourmaker/about.png",
-      "/assets/works/yourmaker/demo_section.png",
-      "/assets/works/yourmaker/footer.png",
+    desktop_mock: [
+      "/assets/works/yourmaker/desktop_1.webp",
+      "/assets/works/yourmaker/desktop_2.webp",
+    ],
+    laptop_mock: [
+      "/assets/works/yourmaker/laptop_1.webp",
+      "/assets/works/yourmaker/laptop_2.webp",
+    ],
+    mobile_mock: [
+      "/assets/works/yourmaker/m1.webp",
+      "/assets/works/yourmaker/m2.webp",
+      "/assets/works/yourmaker/m3.webp",
     ],
   },
 ];

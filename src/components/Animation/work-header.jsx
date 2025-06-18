@@ -16,17 +16,17 @@ const WorkHeader = ({ title, service, date, site }) => {
         initial={{ y: "120%" }}
         whileInView={{
           y: "0%",
-          transition: { delay: 0.1, ease: "easeInOut" },
+          transition: { delay: 0.1, ease: "easeIn" },
         }}
         viewport={{ once: true }}
-        className="text-5xl font-black tablet:text-6xl laptop:text-7xl desktop:text-8xl"
+        className="text-5xl font-bold tablet:text-6xl laptop:text-7xl desktop:text-8xl"
       >
         {title}
       </motion.h1>
       {/* </div> */}
       <motion.h1
         initial={{ y: "150%" }}
-        whileInView={{ y: "0%", transition: { delay: 0.4, ease: "easeInOut" } }}
+        whileInView={{ y: "0%", transition: { delay: 0.4, ease: "easeIn" } }}
         viewport={{ once: true }}
         className="overflow-hidden text-neutral-500 desktop:text-3xl"
       >
@@ -34,7 +34,7 @@ const WorkHeader = ({ title, service, date, site }) => {
       </motion.h1>
       <motion.h1
         initial={{ y: "150%" }}
-        whileInView={{ y: "0%", transition: { delay: 0.5, ease: "easeInOut" } }}
+        whileInView={{ y: "0%", transition: { delay: 0.5, ease: "easeIn" } }}
         viewport={{ once: true }}
         className="overflow-hidden text-neutral-500 desktop:text-3xl"
       >
@@ -42,11 +42,11 @@ const WorkHeader = ({ title, service, date, site }) => {
       </motion.h1>
       <motion.div
         initial={{ y: "150%" }}
-        whileInView={{ y: "0%", transition: { delay: 0.7, ease: "easeInOut" } }}
+        whileInView={{ y: "0%", transition: { delay: 0.7, ease: "easeIn" } }}
         viewport={{ once: true }}
       >
         <Link target="_blank" href={site} className="redd">
-          <Button variant={"outline"} className="group gap-2">
+          <Button variant={"line"} className="group gap-2">
             <Send className="group-hover:animate-bounce" /> Live site
           </Button>
         </Link>

@@ -9,9 +9,9 @@ const Cursor = ({ children, title }) => {
       <div
         id="cursor"
         style={{ top: y, left: x, transform: "translate(-50%, -50%)" }}
-        className="pointer-events-none fixed z-[9999] hidden rounded-md bg-white/90 p-2 group-hover:block"
+        className="pointer-events-none fixed z-[9999] hidden rounded bg-white/90 p-2 group-hover:block"
       >
-        <span className="rounded bg-neutral-300 p-1">View</span> | {title}
+        <span className="bg-neutral-200 rounded-sm p-1">View</span> | {title}
       </div>
       {children}
     </div>
