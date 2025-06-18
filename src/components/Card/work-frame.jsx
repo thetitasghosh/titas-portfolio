@@ -1,37 +1,43 @@
-import Image from 'next/image';
-import React from 'react';
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import React from "react";
 
-const WorkFrame = ({title,service,date,cover_img}) => {
+const WorkFrame = ({ title, service, date, cover_img, cover_video, color }) => {
+  const Color = color;
   return (
     <div id="work" className="space-y-2">
       <div
-        id="title"
-        className="resd flex items-center gap-2 px-2 text-neutral-500"
-      >
-        <h1 className="text-lg font-black desktop:text-3xl">Your Maker</h1>|
-        <h1 className="text-xs desktop:text-2xl">Design & Development</h1>|
-        <h1 className="text-xs desktop:text-2xl">2025</h1>
-      </div>
-      <div
         id="work-frame"
-        className="redd relative h-60 w-full bg-orange-50 p-5 laptop:h-full laptop:p-28"
+        className={cn(
+          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28`,
+          {
+            "via-yourmaker bg-gradient-to-tr from-white from-20% via-50% to-white to-030%":
+              Color === "yourmaker",
+          },
+        )}
       >
-        {" "}
+        <div
+          id="title"
+          className="resd absolute right-0 top-0 flex items-center justify-end gap-2 bg-white px-2 text-neutral-500"
+        >
+          <h1 className="text-xs font-black desktop:text-3xl">{title}</h1>
+        </div>
         <div
           id="work-cover"
-          className="redd h-full w-full overflow-hidden rounded-md"
+          className="redd h-full w-full overflow-hidden rounded-md py-5"
         >
-          <Image
-            src={"/assets/works/yourmaker/hero_section.png"}
-            alt="works"
-            width={1000}
-            height={1000}
+          <video
+            src={cover_video}
             className="size-full object-contain"
-          />
+            width={1980}
+            height={1080}
+            loop
+            autoPlay
+          ></video>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default WorkFrame;

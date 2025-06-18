@@ -23,13 +23,10 @@ const Header = () => {
     >
       <div
         id="container"
-        className="redd container flex h-full flex-col items-start justify-between gap-1 overflow-hidden rounded-md border px-2 backdrop-blur-md dark:border-neutral-900 dark:bg-neutral-800 tablet:px-5"
+        className="redd container flex h-full flex-col items-start justify-between gap-1 overflow-hidden rounded-md border bg-white px-2 dark:border-neutral-900 dark:bg-neutral-800 tablet:px-5"
       >
         <div className="redd flex h-11 w-full items-center justify-between">
-          <div
-            id="logo"
-            className="redd h-11 font-medium text-black mix-blend-difference dark:text-white"
-          >
+          <div id="logo" className="redd h-11 font-medium text-black">
             <Link
               href={"/"}
               className="flex size-full items-center justify-center text-xl"

@@ -3,7 +3,7 @@ import LenisScroll from "@/lib/helper/lenis-scroll";
 import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/lib/helper/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
@@ -11,7 +11,8 @@ import "./globals.css";
 
 // const RethinkSan = Rethink_Sans({ subsets: ["latin"] });
 // const RethinkSan = Inclusive_Sans({ weight: "400", subsets: ["latin"] });
-const Space = Space_Grotesk({ subsets: ["latin"] });
+// const Space = Space_Grotesk({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://titasghosh.com/"),
@@ -36,21 +37,21 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={Space.className}>
-          <ThemeProvider
+        <body className={inter.className}>
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-          >
-            <LenisScroll>
-              <Header />
-              {children}
-              <GoogleAnalytics gaId="G-71NWJY69F8" />
-              <Analytics />
-              <Footer />
-            </LenisScroll>
-          </ThemeProvider>
+          > */}
+          <LenisScroll>
+            <Header />
+            {children}
+            <GoogleAnalytics gaId="G-71NWJY69F8" />
+            <Analytics />
+            <Footer />
+          </LenisScroll>
+          {/* </ThemeProvider> */}
         </body>
       </html>
     </ViewTransitions>

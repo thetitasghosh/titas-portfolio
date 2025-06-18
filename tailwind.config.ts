@@ -32,6 +32,7 @@ const config = {
         ScienceBlue: "#0071E3",
         ScienceBlueDark: "#0156CF",
         AthensGray: "#F2F2F4",
+        yourmaker: "#f26522",
       },
       // fontFamily:{
       //   sans:['var(--RethinkSan)']

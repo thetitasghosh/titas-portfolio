@@ -44,7 +44,7 @@ export default function Home() {
           className="redd container h-full space-y-5 text-neutral-900 dark:text-neutral-100"
         >
           <HeroSection />
-          <AboutSection />
+          {/* <AboutSection /> */}
           <WorkSection />
           {/* <ContactSection /> */}
         </div>

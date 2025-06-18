@@ -1,3 +1,5 @@
+import { color } from "framer-motion";
+
 export const WORKS = [
   {
     id: 1,
@@ -6,7 +8,9 @@ export const WORKS = [
     title: "Your Maker",
     service: "Design & Development",
     date: "2025",
+    color: "yourmaker",
     cover_img: "/assets/works/yourmaker/hero_section.png",
+    cover_video: "/assets/works/yourmaker/yourmaker-cover.webm",
     desktop_mock: "/assets/works/yourmaker/desktop_mock.png",
     laptop_mock: "/assets/works/yourmaker/laptop_mock.png",
     images: [
