@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export const metadata = {
   title: "Lab",
@@ -27,18 +28,9 @@ const Page = () => {
 
         <section className="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-6">
           {LABS.map((data, i) => (
-            <LabDialog key={i} src={data.video} url={data.url}>
-              <div className="overflow-hidden rounded-md p-1 shadow-md transition-transform duration-300 hover:scale-105">
-                <h1 className="redd w-full p-1 text-left">{data.title}</h1>
-                <Image
-                  src={data.thumbnail}
-                  alt={data.title || `Lab work ${i + 1}`}
-                  width={1000}
-                  height={1000}
-                  className="h-full w-full overflow-hidden rounded-md object-cover"
-                />
-              </div>
-            </LabDialog>
+            <Link target="_blank" key={i} href={data.url} className="size-full">
+              <LabDialog key={i} {...data} />
+            </Link>
           ))}
         </section>
       </div>
@@ -48,33 +40,38 @@ const Page = () => {
 
 export default Page;
 
-function LabDialog({ children, src, url }) {
+function LabDialog({ video, url, title }) {
   return (
-    <Dialog>
-      <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="h-auto max-w-4xl border-none bg-transparent p-0 shadow-none">
-        <DialogHeader>
-          <DialogTitle hidden>Video Preview</DialogTitle>
-        </DialogHeader>
-        <div className="relative aspect-video w-full overflow-hidden rounded-lg border-none">
-          <video
-            src={src}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="h-full w-full object-cover"
-          />
-          <Link
-            target="_blank"
-            className="absolute right-0 top-0 m-1 rounded-3xl bg-neutral-100 px-2 text-xs text-black"
-            href={url}
-          >
-            {url}
-          </Link>
+    <div id="work" className="space-y-2">
+      <div
+        id="work-frame"
+        className={cn(
+          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28`,
+          {
+            "to-030% bg-gradient-to-tr from-white from-20% via-neutral-300 via-50% to-white": true,
+          },
+        )}
+      >
+        <div
+          id="title"
+          className="resd absolute right-0 top-0 flex items-center justify-end gap-2 bg-white px-2 text-neutral-500"
+        >
+          <h1 className="text-xs font-black desktop:text-3xl">{title}</h1>
         </div>
-      </DialogContent>
-      <DialogClose hidden />
-    </Dialog>
+        <div
+          id="work-cover"
+          className="redd h-full w-full overflow-hidden rounded-md py-5"
+        >
+          <video
+            src={video}
+            className="size-full object-contain"
+            width={1980}
+            height={1080}
+            loop
+            autoPlay
+          ></video>
+        </div>
+      </div>
+    </div>
   );
 }
