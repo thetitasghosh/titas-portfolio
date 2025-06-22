@@ -11,7 +11,7 @@ const Preloader = () => {
       exit={"exit"}
       className="fixed right-0 top-0 z-[9999] flex h-screen w-full items-center justify-center bg-white stroke-black dark:bg-black dark:[&_svg]:stroke-white"
     >
-      <div className="">
+      <div className="size-full redd flex items-center justify-center">
         <SVG />
       </div>
     </motion.div>

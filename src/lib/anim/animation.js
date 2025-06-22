@@ -73,7 +73,8 @@ export const PreloaderSildeUp = {
     right: 0,
   },
   exit: {
-    top: "-100vh",
+    // top: "-100vh",
+    top: 0,
     right: 0,
     transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.5 },
   },
