@@ -6,7 +6,7 @@ export const metadata = {
   description: "...",
 };
 
-const page = () => {
+const AboutPage = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center pt-16">
       <div id="container" className="container h-full red"></div>
@@ -14,4 +14,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AboutPage;

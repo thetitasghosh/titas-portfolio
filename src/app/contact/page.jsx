@@ -6,8 +6,8 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div className="flex h-screen w-full pt-16  items-center justify-center">
-      <div id="container" className="container red h-full border"></div>
+    <div className="flex h-screen w-full items-center justify-center pt-16">
+      <div id="container" className="red container h-full border"></div>
     </div>
   );
 };

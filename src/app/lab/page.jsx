@@ -14,11 +14,11 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const metadata = {
-  title: "Lab",
+  title: "Labs",
   description: "Recent experimental works and prototypes.",
 };
 
-const Page = () => {
+const LabsPage = () => {
   return (
     <div className="flex min-h-screen w-full items-center justify-center px-6 pt-16">
       <div className="container h-full space-y-6">
@@ -26,7 +26,7 @@ const Page = () => {
           <h1>Recent Experiments ↴</h1>
         </header>
 
-        <section className="md:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-6">
+        <section className="grid grid-cols-1 gap-6 tablet:grid-cols-2">
           {LABS.map((data, i) => (
             <Link target="_blank" key={i} href={data.url} className="size-full">
               <LabDialog key={i} {...data} />
@@ -38,7 +38,7 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default LabsPage;
 
 function LabDialog({ video, url, title }) {
   return (
@@ -54,9 +54,9 @@ function LabDialog({ video, url, title }) {
       >
         <div
           id="title"
-          className="resd absolute right-0 top-0 flex items-center justify-end gap-2 bg-white px-2 text-neutral-500"
+          className="resd absolute left-1 top-1 flex items-center justify-end gap-2 bg-white px-2 text-neutral-500 desktop:rounded"
         >
-          <h1 className="text-xs font-black desktop:text-3xl">{title}</h1>
+          <h1 className="text-xs font-semibold desktop:text-xl">{title}</h1>
         </div>
         <div
           id="work-cover"

@@ -29,16 +29,16 @@ const Header = () => {
           <div id="logo" className="redd h-11 font-medium text-black">
             <Link
               href={"/"}
-              className="flex size-full items-center justify-center text-xl"
+              className="flex size-full font-semibold items-center justify-center text-xl"
             >
               Titas Ghosh
             </Link>
           </div>
-          <div id="menu-desktop" className="hidden gap-10 laptop:flex">
+          <div id="menu-desktop" className="hidden gap-5 laptop:flex">
             {nav.map((data, i) => {
               return (
                 <Link
-                  className="text-neutral-600 transition-all duration-500 hover:underline"
+                  className="text-neutral-600 text-sm transition-all duration-500 hover:underline"
                   href={data.route}
                   key={i}
                 >
@@ -95,7 +95,7 @@ const Header = () => {
               </Link>
             );
           })}
-          <div className="flex items-center">
+          <div className="flex items-center redd">
             {social.map((data, i) => {
               return (
                 <div key={i}>

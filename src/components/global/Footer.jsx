@@ -12,7 +12,7 @@ const Footer = () => {
         className="container flex h-full flex-col items-center justify-center rounded-md border px-5 dark:border-neutral-900 dark:bg-neutral-800"
       >
         {/* <div className="h-full w-full"></div> */}
-        <div className="redd flex min-h-14 w-full flex-col items-start justify-center tablet:justify-between tablet:flex-row laptop:items-center">
+        <div className="redd flex min-h-14 w-full flex-col items-start justify-center tablet:items-center tablet:justify-between tablet:flex-row laptop:items-center">
           <div id="copy" className="flex items-center">
             &copy;2025 |{" "}
             <Link href={"/"} className="">

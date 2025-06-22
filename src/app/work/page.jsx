@@ -12,7 +12,7 @@ export const metadata = {
   description: "...",
 };
 
-const page = () => {
+const WorkPage = () => {
   return (
     <div className="flex min-h-screen w-full items-start justify-center px-6 pt-16">
       <div id="container" className="borderr container h-full space-y-2">
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default WorkPage;

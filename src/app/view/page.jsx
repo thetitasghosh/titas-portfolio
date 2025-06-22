@@ -1,8 +1,8 @@
 import React from "react";
 
-const page = () => {
+const ViewPage = () => {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-3 bg-black">
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-3">
       <h1 className="text-2xl">View is Coming Soon</h1>
       <p className="w-96 text-justify">
         People&apos;s views significantly influence their decision-making
@@ -15,4 +15,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ViewPage;
