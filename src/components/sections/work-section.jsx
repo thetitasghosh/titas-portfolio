@@ -35,7 +35,7 @@ const WorkSection = () => {
         {WORKS.map((data, i) => {
           return (
             <Link key={i} href={`/work/${data.slug}`}>
-              <Cursor title={data.title}>
+              {/* <Cursor title={data.title}> */}
                 <WorkFrame
                   date={data.date}
                   service={data.service}
@@ -44,7 +44,7 @@ const WorkSection = () => {
                   cover_video={data.cover_video}
                   color={data.color}
                 />
-              </Cursor>
+              {/* </Cursor> */}
             </Link>
           );
         })}
