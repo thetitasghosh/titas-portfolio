@@ -1,5 +1,6 @@
 import React from "react";
 import { social } from "@/data/navigation";
+import ISTClock from "@/components/global/ISTClock";
 import ThemeSwitcher from "@/components/buttons/theme-switcher";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -12,10 +13,10 @@ const Footer = () => {
         className="container flex h-full flex-col items-center justify-center rounded-md border px-5 dark:border-neutral-900 dark:bg-neutral-800"
       >
         {/* <div className="h-full w-full"></div> */}
-        <div className="redd flex min-h-14 w-full flex-col items-start justify-center tablet:items-center tablet:justify-between tablet:flex-row laptop:items-center">
-          <div id="copy" className="flex items-center">
-            &copy;2025 |{" "}
-            <Link href={"/"} className="">
+        <div className="redd  flex min-h-14 w-full items-center justify-between tablet:flex-row tablet:items-center tablet:justify-between laptop:items-center">
+          <div id="copy" className="redf">
+            &copy;2025 |<ISTClock />
+            {/* <Link href={"/"} className="">
               <Image
                 src={"/assets/titas_sign.svg"}
                 width={120}
@@ -23,14 +24,14 @@ const Footer = () => {
                 alt="Titas"
                 className="fill-black dark:fill-white"
               />
-            </Link>
+            </Link> */}
           </div>
           <div id="email" className="hidden tablet:block">
             <Link href={"mailto:hello@titasghosh.com"}>
               hello@titasghosh.com
             </Link>
           </div>
-          <div id="social" className="hidden tablet:block">
+          <div id="social" className="redf">
             {social.map((data, i) => {
               return (
                 <Link key={i} href={data.route}>
