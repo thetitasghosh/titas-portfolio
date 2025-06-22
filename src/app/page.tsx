@@ -10,34 +10,33 @@ import WorkSection from "@/components/sections/work-section";
 import ContactSection from "@/components/sections/contact-section";
 export default function Home() {
   const [isloading, setIsloading] = useState(true);
-  // useEffect(() => {
-  //   const sendPing = () => {
-  //     fetch("/api/ping", {
-  //       method: "POST",
-  //       credentials: "include", // Send cookies
-  //     });
-  //   };
+  const [loaded, setIsloaded] = useState(false);
 
-  //   sendPing(); // Send first ping when page loads
-
-  //   const interval = setInterval(sendPing, 10000); // Send ping every 10s
-
-  //   return () => clearInterval(interval); // Stop pinging when user leaves
-  // }, []);
   useEffect(() => {
-    setTimeout(() => {
-      setIsloading(false);
-      // document.body.style = "hidden";
-      // document.querySelector(".MainPage").style.overflow = "hidden";
+    const animated = sessionStorage.getItem("PreloaderAnimated");
+    const completed = sessionStorage.getItem("PreloaderCompleted");
 
-      window.scrollTo(0, 0);
-    }, 1000);
-  }, [isloading]);
+    if (animated && completed) {
+      setIsloading(false); // Already visited in this session
+    } else {
+      sessionStorage.setItem("PreloaderAnimated", "true");
+
+      const timeout = setTimeout(() => {
+        sessionStorage.setItem("PreloaderCompleted", "true");
+        setIsloading(false);
+        window.scrollTo(0, 0);
+      }, 1500); // Match with Preloader animation duration
+
+      return () => clearTimeout(timeout);
+    }
+  }, []);
   return (
     <>
+      {/* {loaded && ( */}
       <AnimatePresence mode="wait">
-        {isloading && <Preloader />}
+        {isloading ? <Preloader /> : null}
       </AnimatePresence>
+      {/* )} */}
       <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 selection:bg-neutral-100">
         <div
           id="container"
