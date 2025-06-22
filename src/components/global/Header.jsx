@@ -1,13 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { nav, social } from "@/data/navigation";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import gsap from "gsap";
 const Header = () => {
   const [open, setOpen] = useState(false);
+  useLayoutEffect(() => {
+    // const title = new SplitType(".split-text-yourmaker", {
+    //   types: "lines",
+    // });
+    // const line = new SplitType(".split-text-sum", { types: "lines" });
+    // const desc = new SplitType(".yourmaker-desc", { types: "chars" });
+    const ctx = gsap.context(() => {
+      let tl = gsap.timeline({
+        delay: 2.5,
+      });
+      tl.from(".Header", {
+        opacity: 0,
+        y: "-50%",
+        filter: "blur(10px)",
+      });
+    });
+    return () => ctx.revert();
+  }, []);
   return (
     <motion.div
       initial={{
@@ -19,7 +38,7 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
+      className="redd Header fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
     >
       <div
         id="container"
@@ -29,7 +48,7 @@ const Header = () => {
           <div id="logo" className="redd h-11 font-medium text-black">
             <Link
               href={"/"}
-              className="flex size-full font-semibold items-center justify-center text-xl"
+              className="flex size-full items-center justify-center text-xl font-semibold"
             >
               Titas Ghosh
             </Link>
@@ -38,7 +57,7 @@ const Header = () => {
             {nav.map((data, i) => {
               return (
                 <Link
-                  className="text-neutral-600 text-sm transition-all duration-500 hover:underline"
+                  className="text-sm text-neutral-600 transition-all duration-500 hover:underline"
                   href={data.route}
                   key={i}
                 >
@@ -95,7 +114,7 @@ const Header = () => {
               </Link>
             );
           })}
-          <div className="flex items-center redd">
+          <div className="redd flex items-center">
             {social.map((data, i) => {
               return (
                 <div key={i}>

@@ -1,17 +1,20 @@
+"use client";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
 import Image from "next/image";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 const WorkFrame = ({ title, service, date, cover_img, cover_video, color }) => {
   const Color = color;
+
   return (
-    <div id="work" className="space-y-2">
+    <div id="work" className="WorkFrame space-y-2">
       <div
         id="work-frame"
         className={cn(
           `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28`,
           {
-            "via-yourmaker bg-gradient-to-tr from-white from-20% via-50% to-white to-030%":
+            "to-030% bg-gradient-to-tr from-white from-20% via-yourmaker via-50% to-white":
               Color === "yourmaker",
           },
         )}
