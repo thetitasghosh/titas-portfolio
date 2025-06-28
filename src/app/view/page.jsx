@@ -1,5 +1,8 @@
 import React from "react";
-
+export const metadata = {
+  title: "View",
+  // description: "Recent experimental works and prototypes.",
+};
 const ViewPage = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-3">
