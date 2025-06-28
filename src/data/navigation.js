@@ -5,7 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export const nav = [
   // {  label: "Home", route: "/" },
-  // { label: "About", route: "/about" },
+  { label: "About", route: "/about" },
   { label: "Work", route: "/work" },
   { label: "Lab", route: "/lab" },
   { label: "View", route: "/view" },

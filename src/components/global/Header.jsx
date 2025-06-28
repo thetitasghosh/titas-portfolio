@@ -7,8 +7,11 @@ import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const path = usePathname()
   useLayoutEffect(() => {
     // const title = new SplitType(".split-text-yourmaker", {
     //   types: "lines",
@@ -57,7 +60,11 @@ const Header = () => {
             {nav.map((data, i) => {
               return (
                 <Link
-                  className="text-sm text-neutral-600 transition-all duration-500 hover:underline"
+                  className={cn(
+                    "text-sm text-neutral-600 transition-all duration-500 hover:underline",{
+                      "font-medium underline":path === data.route
+                    }
+                  )}
                   href={data.route}
                   key={i}
                 >

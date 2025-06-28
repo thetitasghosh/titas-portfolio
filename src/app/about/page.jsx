@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-
+import AboutPageTop from '@/components/pages/about-page-top'
 export const metadata = {
   title: "About",
   description: "...",
@@ -8,8 +8,9 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center pt-16">
-      <div id="container" className="container h-full red"></div>
+    <div className="redd relative flex min-h-screen w-full flex-col items-center justify-center pt-16">
+      <AboutPageTop/>
+      <div id="container" className="redd container h-full"></div>
     </div>
   );
 };
