@@ -24,14 +24,22 @@ const AboutPageTop = () => {
         y: "50%",
         filter: "blur(10px)",
       });
+      tl.from("#gradient", {
+        opacity: 0,
+        height: "0%",
+        duration: 1.5,
+        // filter: "blur(10px)",
+      });
       tl.from("#image-frame", {
         opacity: 0,
         y: "50%",
+        duration: .5,
         // filter: "blur(10px)",
       });
       tl.from("#image-overlay", {
         // opacity: 0,
         height: "100%",
+        borderRadius: 0,
         duration: 1.5,
         // filter: "blur(10px)",
       });
@@ -41,7 +49,10 @@ const AboutPageTop = () => {
   return (
     <div className="h-[95vh] w-full px-4 pb-10">
       <div className="relative size-full overflow-hidden rounded-3xl">
-        <div class="absolute inset-0 -z-10 h-full w-full bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#0071E3_100%)]"></div>
+        <div
+          id="gradient"
+          class="absolute inset-0 -z-10 h-full w-full rounded-3xl bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#0071E3_100%)]"
+        ></div>
         <div
           id="content"
           className="redd flex size-full flex-col items-center justify-center gap-5"
@@ -62,7 +73,7 @@ const AboutPageTop = () => {
           </div>
           <div
             id="row"
-            className="redd container flex h-full items-center justify-center overflow-hidden pb-9 tablet:justify-end laptop:pr-10 desktop:pr-0 tablet:pb-5"
+            className="redd container flex h-full items-center justify-center overflow-hidden pb-9 tablet:justify-end tablet:pb-5 laptop:pr-10 desktop:pr-0"
           >
             <div
               id="image-frame"
