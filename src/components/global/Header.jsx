@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const path = usePathname()
+  const path = usePathname();
   useLayoutEffect(() => {
     // const title = new SplitType(".split-text-yourmaker", {
     //   types: "lines",
@@ -61,14 +61,16 @@ const Header = () => {
               return (
                 <Link
                   className={cn(
-                    "text-sm text-neutral-600 transition-all duration-500 hover:underline",{
-                      "font-medium underline":path === data.route
-                    }
+                    "group relative text-sm text-neutral-600 transition-all duration-500",
+                    {
+                      "font-semibold": path === data.route,
+                    },
                   )}
                   href={data.route}
                   key={i}
                 >
                   {data.label}
+                  <div className="absolute bottom-1 right-0 h-[0.05rem] w-0 bg-neutral-950 transition-all duration-700 group-hover:left-0 group-hover:w-full"></div>
                 </Link>
               );
             })}
