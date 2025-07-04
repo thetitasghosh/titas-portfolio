@@ -66,7 +66,7 @@ const ViewPost = async ({ params }) => {
 
   return (
     <div className="mt-20 flex min-h-screen w-full items-center justify-center laptop:mt-10">
-      <div className="redd container relative flex flex-col gap-6 px-6 text-left tablet:px-[10%] laptop:px-[15%] desktop:px-[20%]">
+      <div className="redd tablet:pt-0 pt-10 container relative flex flex-col gap-6 px-6 text-left tablet:px-[10%] laptop:px-[15%] desktop:px-[20%]">
         <Link href={"/view"}>
           <div className="absolute left-5 top-5">
             <ArrowUpLeft className="transition-all duration-500 hover:-translate-x-1 hover:-translate-y-1" />
