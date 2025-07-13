@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
-        <body className={(inter.className, "selection:bg-neutral-100")}>
+        <body className={(inter.className)}>
           {/* <ThemeProvider
             attribute="class"
             defaultTheme="light"
