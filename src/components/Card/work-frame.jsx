@@ -35,6 +35,8 @@ const WorkFrame = ({ title, service, date, cover_img, cover_video, color }) => {
             width={1980}
             height={1080}
             loop
+            muted
+            playsInline
             autoPlay
           ></video>
         </div>
