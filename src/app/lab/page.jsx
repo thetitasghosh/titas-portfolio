@@ -69,6 +69,9 @@ function LabDialog({ video, url, title }) {
             height={1080}
             loop
             autoPlay
+            muted
+            playsInline
+        
           ></video>
         </div>
       </div>
