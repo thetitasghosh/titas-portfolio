@@ -1,0 +1,43 @@
+# Titas Ghosh's Portfolio
+
+This website showcases the work of Titas Ghosh, a frontend developer and designer focused on creating clean, fast, and meaningful digital experiences. It serves as a portfolio featuring recent projects, experiments, and thoughts on design and development.
+
+## About
+
+The **About** page presents Titas Ghosh as a creator who merges design and development to craft thoughtful digital solutions. Titas emphasizes clarity in his work, illustrating his philosophy of creating functional and well-detailed projects.
+
+![Titas Ghosh](/_next/image?url=%2Fassets%2Fprofile%2Ftitas_me.png&w=3840&q=75)
+
+### Links
+- [GitHub](https://github.com/thetitasghosh)
+- [Twitter](https://twitter.com/thetitasghosh)
+- [Instagram](https://instagram.com/thetitasghosh)
+
+## Contact
+
+The **Contact** page provides visitors with details to reach Titas Ghosh, including an email address for inquiries.
+
+[hello@titasghosh.com](mailto:hello@titasghosh.com)
+
+## Work
+
+The **Work** section showcases recent projects, highlighting Titas's ongoing commitment to high-quality work. Currently, the featured project is "Your Maker," with more coming soon.
+
+### Links
+- [Your Maker](https://work/the-your-maker)
+
+## Lab
+
+The **Lab** section features recent experiments by Titas, showcasing innovative effects and interactive designs. Notable projects include:
+- [Text Parallax Letter](https://parallax-3d-letter-titas.vercel.app/)
+- [Floating Image Gallery](https://image-gallary-five.vercel.app/)
+- [Horizontal Scroll Effect](https://horizontal-scroll-omega.vercel.app/)
+- [Pixel Hover Effect](https://pixel-hover-effect.vercel.app/)
+
+## View
+
+The **View** section contains thoughts and writings by Titas. One notable piece is "Ideas Move Like Wind," which reflects on the nature of ideas as intangible yet impactful.
+
+### Links
+- [Ideas Move Like Wind](/view/ideas-move-like-wind)
+
