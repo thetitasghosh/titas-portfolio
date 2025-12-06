@@ -37,7 +37,7 @@ export default function Home() {
         {isloading ? <Preloader /> : null}
       </AnimatePresence>
       {/* )} */}
-      <main className="flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 selection:bg-neutral-100">
+      <main className="relative flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 selection:bg-neutral-100">
         <div
           id="container"
           className="redd container h-full space-y-5 text-neutral-900 dark:text-neutral-100"
@@ -47,6 +47,7 @@ export default function Home() {
           <WorkSection />
           {/* <ContactSection /> */}
         </div>
+        
       </main>
     </>
   );

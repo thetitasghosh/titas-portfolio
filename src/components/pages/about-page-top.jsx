@@ -77,11 +77,11 @@ const AboutPageTop = () => {
           >
             <div
               id="image-frame"
-              className="redd relative z-50 h-fit w-72 overflow-hidden rounded-2xl"
+              className="redd border relative z-50 h-60 w-52 overflow-hidden rounded-2xl"
             >
               <Image
                 src={"/assets/profile/titas_me.png"}
-                className="size-full object-contain"
+                className="size-full object-cover"
                 width={1980}
                 height={1080}
                 alt="Titas Ghosh"

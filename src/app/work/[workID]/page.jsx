@@ -60,7 +60,7 @@ export default function ItemPage({ params }) {
         >
           <div
             id="image-frame"
-            className="redd h-fit w-full overflow-hidden rounded-md"
+            className="redd h-fit w-full overflow-hidden rounded-xl"
           >
             <Image
               alt={workitem.title}

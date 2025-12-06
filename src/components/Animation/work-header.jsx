@@ -46,8 +46,12 @@ const WorkHeader = ({ title, service, date, site }) => {
         viewport={{ once: true }}
       >
         <Link target="_blank" href={site} className="redd">
-          <Button variant={"line"} className="group gap-2">
-            <Send className="group-hover:animate-bounce" /> Live site
+          <Button
+            variant={"line"}
+            className="group gap-2 transition-all duration-500 hover:text-blue-500"
+          >
+            <Send className="transition-all duration-500 group-hover:animate-bounce" />{" "}
+            Live site
           </Button>
         </Link>
       </motion.div>
