@@ -5,6 +5,7 @@ import path from "path";
 
 // Optional: import your custom MDX components
 import { Quote } from "@/components/Md/Quote";
+import { Image } from "@/components/Md/Image";
 import { Callout } from "@/components/Md/Callout";
 import { Highlight } from "@/components/Md/Highlight";
 import { ArrowUpLeft } from "lucide-react";
@@ -59,13 +60,14 @@ const ViewPost = async ({ params }) => {
     },
     components: {
       Quote,
+      Image,
       Callout,
       Highlight,
     },
   });
 
   return (
-    <div className="mt-20 flex min-h-screen w-full items-center justify-center laptop:mt-10">
+    <div className="mt-20 pt-20 flex min-h-screen w-full items-center justify-center laptop:mt-10">
       <div className="redd tablet:pt-0 pt-10 container relative flex flex-col gap-6 px-6 text-left tablet:px-[10%] laptop:px-[15%] desktop:px-[20%]">
         <Link href={"/view"}>
           <div className="absolute left-5 top-5">
