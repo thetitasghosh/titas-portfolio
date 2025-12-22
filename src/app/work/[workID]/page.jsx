@@ -48,6 +48,7 @@ export default function ItemPage({ params }) {
           "borderr container flex h-full flex-col items-center justify-center gap-5",
         )}
       >
+        
         <WorkHeader
           date={workitem.date}
           site={workitem.site}
