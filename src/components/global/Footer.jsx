@@ -5,7 +5,7 @@ import { social } from "@/data/navigation";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full px-6 py-24 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 tablet:px-12 desktop:px-24">
+    <footer className="relative w-full px-6 py-32 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 tablet:px-12 desktop:px-24">
       <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#3b82f5_100%)]"></div>
       <div className="mx-auto grid max-w-full grid-cols-1 gap-16 tablet:grid-cols-3">
         {/* LEFT — SOCIALS & CONTACT */}
@@ -19,7 +19,7 @@ const Footer = () => {
                 <li key={i}>
                   <Link
                     href={item.route}
-                    className="transition hover:text-neutral-600 dark:hover:text-neutral-300"
+                    className="transition hover:text-blue-600 dark:hover:text-blue-300"
                   >
                     {item.label}
                   </Link>
@@ -33,7 +33,7 @@ const Footer = () => {
               Contact
             </p>
             <ul className="space-y-1">
-              <li>
+              <li className="hover:text-blue-600">
                 <Link href="mailto:hello@titasghosh.com">Email</Link>
               </li>
               {/* <li>
@@ -62,12 +62,23 @@ const Footer = () => {
 
           <Link
             href="mailto:hello@titasghosh.com"
-            className="mt-8 text-xl font-medium transition hover:opacity-70"
+            className="mt-8 text-xl font-medium transition hover:text-blue-600 hover:opacity-70"
           >
             hello@titasghosh.com
           </Link>
         </div>
       </div>
+      {/* <div className="redd absolute bottom-0 right-0 flex min-h-20 w-full items-center justify-center py-2">
+        <marquee behavior="scroll" direction="">
+          <div className="flex items-center justify-center gap-5 py-2 pt-10 text-8xl font-semibold text-neutral-800">
+            {Array(10).fill(
+              <p className="">
+                hello<span className="text-blue-600">@</span>thetitasghosh.com
+              </p>,
+            )}
+          </div>
+        </marquee>
+      </div> */}
     </footer>
   );
 };

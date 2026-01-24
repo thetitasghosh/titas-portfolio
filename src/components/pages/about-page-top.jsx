@@ -58,7 +58,7 @@ const AboutPageTop = () => {
           alt="Titas Ghosh"
           fill
           priority
-          className="translate-x-0 scale-150 object-cover object-center pb-16 tablet:scale-100 tablet:pb-0 laptop:translate-x-0 laptop:scale-100 desktop:translate-x-0 desktop:scale-100"
+          className="-translate-x-0 scale-150 object-cover object-center pb-16 tablet:scale-100 tablet:pb-0 laptop:translate-x-0 laptop:scale-100 desktop:translate-x-0 desktop:scale-100"
         />
       </div>
       <div className="relative size-full overflow-hidden rounded-3xl">
