@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Titas Ghosh | Creative Technologist & Product Builder",
-    template: "%s — Titas Ghosh",
+    template: "%s | Titas Ghosh",
   },
 
   description:
