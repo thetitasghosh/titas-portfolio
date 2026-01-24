@@ -2,6 +2,7 @@
 import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroSection = () => {
   useLayoutEffect(() => {
@@ -63,11 +64,20 @@ const HeroSection = () => {
         </div>
         <div className="HeroText hidden h-[50%] w-60 flex-col items-center justify-between gap-4 laptop:flex">
           {/* Call to Action Button */}
-          <div className="border-b border-t text-sm font-light">
-            <span className="text-sm font-semibold"> What I work on</span>{" "}
-            <br /> Product Strategy <br /> Design Engineering <br /> Frontend
-            Architecture <br /> Brand Systems <br /> Motion & Interaction
+          <div className="border-t text-sm font-light">
+            <span className="text-sm font-semibold"> What I work on</span>
+            <p className="border-t pb-5 pl-2">
+              Product Strategy <br /> Design Engineering <br /> Frontend
+              Architecture <br /> Brand Systems <br /> Motion & Interaction
+            </p>
+            <Link
+              href={"mailto:the@titasghosh.com"}
+              className="border-b text-sm transition hover:border-blue-600 hover:text-blue-600"
+            >
+              How can I help you?
+            </Link>
           </div>
+
           <span>(Scroll Down)</span>
         </div>
       </div>
