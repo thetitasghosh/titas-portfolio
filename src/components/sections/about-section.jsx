@@ -3,20 +3,29 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import Cursor from "../extensions/cursor";
+// import { color } from "framer-motion";
+// import { link } from "fs";
 
 const ventures = [
   {
     name: "Exelth",
+    color: "exelth",
+    link: "https://www.exelth.com",
     logo: "/assets/innovations/exelth.png",
     desc: "Healthcare booking & management platform",
   },
   {
     name: "Egostix Engineering",
+    color: "egostix-engineering",
+    link: "https://www.egostix.com",
     logo: "/assets/innovations/egostix-engineering.jpg",
     desc: "Product & software engineering studio",
   },
   {
     name: "Egostix Media",
+    color: "egostix-media",
+    link: "https://media.egostix.com",
     logo: "/assets/innovations/egostix-media.png",
     desc: "Brand, design & digital storytelling",
   },
@@ -38,13 +47,17 @@ const AboutSection = () => {
                 key={i}
                 className="redd group flex size-28 overflow-hidden border laptop:size-52"
               >
-                <Image
-                  width={800}
-                  height={800}
-                  src={item.logo}
-                  alt={item.name}
-                  className="mb-4 size-full object-contain transition-transform group-hover:scale-105"
-                />
+                <Cursor color={item.color}>
+                  <Link href={item.link} target="_blank">
+                    <Image
+                      width={800}
+                      height={800}
+                      src={item.logo}
+                      alt={item.name}
+                      className="mb-4 size-full object-contain transition-transform group-hover:scale-105"
+                    />
+                  </Link>
+                </Cursor>
               </div>
             ))}
           </div>
