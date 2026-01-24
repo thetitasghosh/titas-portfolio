@@ -41,11 +41,11 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd Header fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-center px-5 py-2 selection:bg-neutral-100"
+      className="redd Header fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-between py-2 selection:bg-neutral-100"
     >
       <div
         id="container"
-        className="redd container flex h-full flex-col items-start justify-between gap-1 overflow-hidden rounded-md border bg-white px-2 dark:border-neutral-900 dark:bg-neutral-800 tablet:px-5"
+        className="redd flex h-full w-full  flex-col items-center justify-between gap-1 overflow-hidden rounded-md bg-transparent px-6 dark:border-neutral-900 dark:bg-neutral-800 tablet:px-12 desktop:px-24"
       >
         <div className="redd flex h-11 w-full items-center justify-between">
           <div id="logo" className="redd h-11 font-medium text-black">
@@ -61,7 +61,7 @@ const Header = () => {
               return (
                 <Link
                   className={cn(
-                    "group relative text-sm text-neutral-600 transition-all duration-500",
+                    "group relative text-sm text-neutral-800 mix-blend-difference transition-all duration-500",
                     {
                       "font-semibold": path === data.route,
                     },
@@ -80,8 +80,8 @@ const Header = () => {
             className="redd flex h-11 items-center justify-center laptop:hidden"
           >
             <Button
-              className="group"
-              variant="ghost"
+              className="group bg-transparent"
+              // variant="outline"
               size="icon"
               onClick={() => setOpen((prevState) => !prevState)}
               aria-expanded={open}

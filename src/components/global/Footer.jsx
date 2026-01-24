@@ -1,57 +1,74 @@
 import React from "react";
-import { social } from "@/data/navigation";
-import ISTClock from "@/components/global/ISTClock";
-import ThemeSwitcher from "@/components/buttons/theme-switcher";
 import Link from "next/link";
-import { Button } from "../ui/button";
-import Image from "next/image";
+import ISTClock from "@/components/global/ISTClock";
+import { social } from "@/data/navigation";
+
 const Footer = () => {
   return (
-    <div className="flex h-fit w-full items-center justify-center p-5 selection:bg-neutral-100">
-      <div
-        id="container"
-        className="container flex h-full flex-col items-center justify-center rounded-md border px-5 dark:border-neutral-900 dark:bg-neutral-800"
-      >
-        {/* <div className="h-full w-full"></div> */}
-        <div className="redd  flex min-h-14 w-full items-center justify-between tablet:flex-row tablet:items-center tablet:justify-between laptop:items-center">
-          <div id="copy" className="redf">
-            &copy;2025 |<ISTClock />
-            {/* <Link href={"/"} className="">
-              <Image
-                src={"/assets/titas_sign.svg"}
-                width={120}
-                height={100}
-                alt="Titas"
-                className="fill-black dark:fill-white"
-              />
-            </Link> */}
-          </div>
-          <div id="email" className="hidden tablet:block">
-            <Link href={"mailto:hello@titasghosh.com"}>
-              hello@titasghosh.com
-            </Link>
-          </div>
-          <div id="social" className="redf">
-            {social.map((data, i) => {
-              return (
-                <Link key={i} href={data.route}>
-                  <Button
-                    variant={"ghost"}
-                    size={"icon"}
-                    className="[&_svg]:size-5"
+    <footer className="relative w-full px-6 py-24 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 tablet:px-12 desktop:px-24">
+      <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#3b82f5_100%)]"></div>
+      <div className="mx-auto grid max-w-full grid-cols-1 gap-16 tablet:grid-cols-3">
+        {/* LEFT — SOCIALS & CONTACT */}
+        <div className="space-y-10 text-sm">
+          <div>
+            <p className="mb-3 uppercase tracking-widest text-neutral-400">
+              Socials
+            </p>
+            <ul className="space-y-1">
+              {social.map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.route}
+                    className="transition hover:text-neutral-600 dark:hover:text-neutral-300"
                   >
-                    {data.icon}
-                  </Button>
-                </Link>
-              );
-            })}
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          {/* <div id="theme-switcher" className="redd">
-            <ThemeSwitcher />
-          </div> */}
+
+          <div>
+            <p className="mb-3 uppercase tracking-widest text-neutral-400">
+              Contact
+            </p>
+            <ul className="space-y-1">
+              <li>
+                <Link href="mailto:hello@titasghosh.com">Email</Link>
+              </li>
+              {/* <li>
+                <Link href="https://wa.me/91XXXXXXXXXX">WhatsApp</Link>
+              </li> */}
+            </ul>
+          </div>
+        </div>
+
+        {/* CENTER — BIG CTA */}
+        <div className="flex flex-col justify-center">
+          <p className="mb-4 text-sm uppercase tracking-widest text-neutral-400">
+            Got a project in mind?
+          </p>
+          <h2 className="max-w-md text-4xl font-light leading-tight tablet:text-5xl">
+            Let’s make something happen together
+          </h2>
+        </div>
+
+        {/* RIGHT — META */}
+        <div className="flex flex-col items-start justify-between text-sm tablet:items-end">
+          <div className="space-y-2 text-neutral-400">
+            <p>© 2025</p>
+            <ISTClock />
+          </div>
+
+          <Link
+            href="mailto:hello@titasghosh.com"
+            className="mt-8 text-xl font-medium transition hover:opacity-70"
+          >
+            hello@titasghosh.com
+          </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

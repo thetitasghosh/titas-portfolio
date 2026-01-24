@@ -31,7 +31,7 @@ const WorkSection = () => {
       {/* <div id="header" className="w-full text-2xl desktop:text-5xl">
         <h1>Recent Work ↴</h1>
       </div> */}
-      <div id="works" className="redd WorkFram h-full w-full">
+      <div id="works" className="redd WorkFram h-full w-full laptop:p-20 p-5">
         {WORKS.map((data, i) => {
           return (
             <Link key={i} href={`/work/${data.slug}`}>

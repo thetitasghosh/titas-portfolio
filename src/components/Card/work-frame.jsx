@@ -12,7 +12,7 @@ const WorkFrame = ({ title, service, date, cover_img, cover_video, color }) => {
       <div
         id="work-frame"
         className={cn(
-          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28`,
+          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28 tablet:h-96`,
           {
             "to-030% bg-gradient-to-tr from-white from-20% via-yourmaker via-50% to-white":
               Color === "yourmaker",
