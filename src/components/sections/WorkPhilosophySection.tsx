@@ -48,13 +48,13 @@ const WorkPhilosophySection = () => {
 
             {/* Circle 2 */}
             <div className="absolute inset-12 rounded-full border border-dashed border-neutral-900 opacity-40 animate-spin" />
-            <div className="absolute left-10 top-1/2 -translate-y-1/2 text-sm text-neutral-800">
+            <div className="absolute tablet:left-10 left-1 top-1/2 -translate-y-1/2 text-sm text-neutral-800">
               Design
             </div>
 
             {/* Circle 3 */}
             <div className="absolute inset-24 rounded-full border border-dashed border-neutral-900 opacity-40 animate-spin" />
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 text-sm text-neutral-800">
+            <div className="absolute tablet:right-10 -right-2 top-1/2 -translate-y-1/2 text-sm text-neutral-800">
               Engineering
             </div>
 
