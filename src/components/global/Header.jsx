@@ -41,11 +41,11 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd Header fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-between py-2 selection:bg-neutral-100"
+      className="redd Header fixed top-0 right-0 z-50 flex h-16 w-full items-center justify-between py-2 backdrop-blur-sm selection:bg-neutral-100"
     >
       <div
         id="container"
-        className="redd flex h-full w-full  flex-col items-center justify-between gap-1 overflow-hidden rounded-md bg-transparent px-6 dark:border-neutral-900 dark:bg-neutral-800 tablet:px-12 desktop:px-24"
+        className="redd flex h-full w-full flex-col items-center justify-between gap-1 overflow-hidden rounded-md bg-transparent px-6 dark:border-neutral-900 dark:bg-neutral-800 tablet:px-12 desktop:px-24"
       >
         <div className="redd flex h-11 w-full items-center justify-between">
           <div id="logo" className="redd h-11 font-medium text-black">
@@ -80,7 +80,7 @@ const Header = () => {
             className="redd flex h-11 items-center justify-center laptop:hidden"
           >
             <Button
-              className="group bg-transparent"
+              className="group bg-transparent text-black"
               // variant="outline"
               size="icon"
               onClick={() => setOpen((prevState) => !prevState)}
@@ -115,7 +115,7 @@ const Header = () => {
             </Button>
           </div>
         </div>
-        <div className="redd flex size-full flex-col items-end justify-center gap-2 overflow-hidden border-t pr-5">
+        <div className="redd 00 flex size-full flex-col items-end justify-center gap-2 overflow-hidden pr-5">
           {nav.map((data, i) => {
             return (
               <Link onClick={() => setOpen(!open)} href={data.route} key={i}>

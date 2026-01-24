@@ -78,7 +78,7 @@ const AboutSection = () => {
               href="/about"
               className="group flex size-16 items-center justify-center rounded-full border border-neutral-700 transition hover:border-neutral-500"
             >
-              <ArrowRight className="size-8 text-blue-500 -rotate-45 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:-rotate-45" />
+              <ArrowRight className="size-8 -rotate-45 text-blue-500 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:-rotate-45" />
             </Link>
           </div>
         </div>

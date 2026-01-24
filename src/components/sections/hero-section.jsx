@@ -43,7 +43,7 @@ const HeroSection = () => {
         {/* Small Intro */}
         <div>
           <p className="HeroText text-sm uppercase tracking-widest text-neutral-900">
-            Hi there!
+            Hi there! this is
           </p>
           <p className="HeroText mb-4 text-xl font-semibold text-neutral-950">
             Titas <span className="text-neutral-700">Ghosh</span>
@@ -62,13 +62,12 @@ const HeroSection = () => {
             engineering — with a founder’s mindset.
           </p>
         </div>
-        <div className="HeroText hidden h-[50%] w-60 flex-col items-center justify-between gap-4 laptop:flex">
+        <div className="HeroText hidden h-[60%] w-60 flex-col items-center justify-between gap-4 laptop:flex">
           {/* Call to Action Button */}
           <div className="border-t text-sm font-light">
             <span className="text-sm font-semibold"> What I work on</span>
             <p className="border-t pb-5 pl-2">
-              Product Strategy <br /> Design Engineering <br /> Frontend
-              Architecture <br /> Brand Systems <br /> Motion & Interaction
+              Design <br /> Engineering <br /> Creativity
             </p>
             <Link
               href={"mailto:the@titasghosh.com"}

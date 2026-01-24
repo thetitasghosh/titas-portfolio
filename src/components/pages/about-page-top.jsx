@@ -1,88 +1,93 @@
 "use client";
+
 import gsap from "gsap";
 import Image from "next/image";
 import React, { useLayoutEffect } from "react";
-import { motion } from "framer-motion";
+import WorkPhilosophySection from "../sections/WorkPhilosophySection";
+
 const AboutPageTop = () => {
   useLayoutEffect(() => {
-    // const title = new SplitType(".split-text-yourmaker", {
-    //   types: "lines",
-    // });
-    // const line = new SplitType(".split-text-sum", { types: "lines" });
-    // const desc = new SplitType(".yourmaker-desc", { types: "chars" });
     const ctx = gsap.context(() => {
-      let tl = gsap.timeline({
-        delay: 1,
-      });
-      tl.from(".AboutText", {
+      gsap.from(".about-anim", {
         opacity: 0,
-        y: "50%",
-        filter: "blur(10px)",
-      });
-      tl.from(".AboutDesc", {
-        opacity: 0,
-        y: "50%",
-        filter: "blur(10px)",
-      });
-      tl.from("#gradient", {
-        opacity: 0,
-        height: "0%",
-        duration: 1.5,
-        // filter: "blur(10px)",
-      });
-      tl.from("#image-frame", {
-        opacity: 0,
-        y: "50%",
-        duration: 0.5,
-        // filter: "blur(10px)",
-      });
-      tl.from("#image-overlay", {
-        // opacity: 0,
-        height: "100%",
-        borderRadius: 0,
-        duration: 1.5,
-        // filter: "blur(10px)",
+        y: 40,
+        stagger: 0.12,
+        duration: 0.9,
+        ease: "power3.out",
       });
     });
     return () => ctx.revert();
   }, []);
+
   return (
-    <div className="relative h-[95vh] w-full px-6 tablet:px-12 desktop:px-24">
+    <section className="relative min-h-screen w-full overflow-hidden px-6 tablet:px-12 desktop:px-24">
+      {/* BACKDROP */}
+      {/* <div className="absolute inset-0 -z-10 bg-neutral-50 dark:bg-neutral-950" /> */}
+
+      {/* MAIN GRID */}
       <div
-        id="gradient"
-        class="absolute inset-0 -z-10 h-full w-full rounded-3xl bg-transparent [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#000_100%)]"
-      ></div>
-      <div className="absolute inset-0">
-        <Image
-          src="/assets/profile/website-cover-right.png"
-          alt="Titas Ghosh"
-          fill
-          priority
-          className="-translate-x-0 scale-150 object-cover object-center pb-16 tablet:scale-100 tablet:pb-0 laptop:translate-x-0 laptop:scale-100 desktop:translate-x-0 desktop:scale-100"
-        />
-      </div>
-      <div className="relative size-full overflow-hidden rounded-3xl">
-        <div
-          id="content"
-          className="redd flex size-full items-center justify-start gap-5"
-        >
-          <div
-            id="row"
-            className="redd container flex h-full flex-col items-start justify-center px-2 text-left"
-          >
-            <h1 className="AboutText overflow-hidden text-3xl font-medium text-neutral-800 tablet:text-4xl laptop:px-10 laptop:text-5xl desktop:px-0 desktop:text-6xl">
-              Where clarity meets craft <br /> that&apos;s what I build.
-            </h1>
-            <p className="AboutDesc mt-4 max-w-xl overflow-hidden text-left indent-5 text-base text-neutral-500 dark:text-neutral-400 laptop:px-10 desktop:pl-0">
-              I work at the edge of design and development — turning ideas into
-              fast, functional, and thoughtfully-crafted digital experiences.
-              Everything I build is shaped by intent, refined by detail, and
-              guided by real-world use.
+        id="section-1"
+        className="flex h-screen flex-col items-center justify-center gap-2 tablet:flex-row laptop:justify-between"
+      >
+        {/* LEFT — TYPOGRAPHY */}
+        <div className="about-anim redd relative flex items-start gap-0 tablet:flex-col tablet:gap-10 laptop:h-[70%]">
+          <h1 className="leading-none">
+            <span className="block text-6xl font-semibold tracking-tight text-neutral-900 tablet:text-7xl desktop:text-8xl">
+              TITAS
+            </span>
+            <span className="block pl-10 text-6xl font-semibold tracking-tight text-blue-500 tablet:text-7xl desktop:text-8xl">
+              GHOSH
+            </span>
+          </h1>
+          <p className="about-anim hidden max-w-xs border-b text-lg font-semibold text-neutral-500 tablet:block laptop:hidden">
+            Product designer and frontend engineer creating products where
+            design, code, and business meet.
+          </p>
+        </div>
+        {/* IMAGE */}
+        <div className="relative h-[420px] w-[300px] overflow-hidden rounded-xl tablet:h-[520px] tablet:w-[380px] desktop:h-[560px] desktop:w-[500px]">
+          <Image
+            src="/assets/profile/dp.png"
+            alt="Titas Ghosh portrait"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
+        {/* RIGHT — IMAGE + MARKER */}
+        <div className="about-anim redd relative hidden items-end justify-center laptop:flex laptop:h-[70%]">
+          {/* YEAR / MARKER */}
+          <div className="text-right">
+            {/* MICRO DESCRIPTION */}
+            <p className="about-anim max-w-xs border-b text-lg font-semibold text-neutral-500">
+              Product designer and frontend engineer creating products where
+              design, code, and business meet.
             </p>
           </div>
         </div>
       </div>
-    </div>
+      <div id="section-1" className="redd flex w-full justify-end laptop:w-1/2">
+        <div>
+          <p className="mb-6 text-sm uppercase tracking-widest text-neutral-400">
+            (Vision)
+          </p>
+
+          <div className="text-2xl leading-snug text-neutral-700 tablet:text-3xl desktop:text-4xl">
+            <p className="mb-8">
+              I design and build systems that turn complexity into
+              clarity—whether for clients, companies, or myself.
+            </p>
+
+            {/* <p className="text-neutral-400">
+              By combining product thinking with hands-on development, I help
+              ideas evolve into clear, scalable digital experiences — focused on
+              usability, performance, and long-term growth.
+            </p> */}
+          </div>
+        </div>
+      </div>
+      <WorkPhilosophySection />
+    </section>
   );
 };
 
