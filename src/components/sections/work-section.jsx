@@ -28,22 +28,30 @@ const WorkSection = () => {
   }, []);
   return (
     <div className="redd flex h-fit w-full flex-col items-center justify-start gap-5">
-      {/* <div id="header" className="w-full text-2xl desktop:text-5xl">
-        <h1>Recent Work ↴</h1>
-      </div> */}
-      <div id="works" className="redd WorkFram h-full w-full laptop:p-20 p-5">
+      <div
+        id="header"
+        className="flex w-full  items-center justify-between px-6 py-10 text-2xl tablet:px-12 desktop:px-24 desktop:text-5xl"
+      >
+        <h1 className="font-bold text-3xl text-neutral-700 tablet:text-4xl desktop:text-6xl">
+          Recent Projects I <br /> worked on
+        </h1>{" "}
+        <p className="mb-6 text-sm uppercase tracking-widest text-neutral-400">
+          (Works)
+        </p>
+      </div>
+      <div id="works" className="redd WorkFram h-full w-full p-5 laptop:p-20">
         {WORKS.map((data, i) => {
           return (
             <Link key={i} href={`/work/${data.slug}`}>
               {/* <Cursor title={data.title}> */}
-                <WorkFrame
-                  date={data.date}
-                  service={data.service}
-                  title={data.title}
-                  cover_img={data.cover_img}
-                  cover_video={data.cover_video}
-                  color={data.color}
-                />
+              <WorkFrame
+                date={data.date}
+                service={data.service}
+                title={data.title}
+                cover_img={data.cover_img}
+                cover_video={data.cover_video}
+                color={data.color}
+              />
               {/* </Cursor> */}
             </Link>
           );
