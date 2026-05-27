@@ -18,6 +18,7 @@ export default async function View() {
     files.map(async (filename) => {
       const filePath = path.join(dir, filename);
       const content = await fs.readFile(filePath, "utf8");
+
       const { frontmatter } = await compileMDX({
         source: content,
         options: { parseFrontmatter: true },
@@ -30,6 +31,13 @@ export default async function View() {
     }),
   );
 
+  // newest date first
+  views.sort((a, b) => {
+    return (
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+  });
+
   return (
     <div className="flex min-h-screen w-full items-start justify-center px-6 pt-16">
       <div id="container" className="borderr container h-full space-y-2">
@@ -39,7 +47,7 @@ export default async function View() {
         <div className="redd flex w-full flex-col items-center justify-center">
           <ul className="mt-10 space-y-10">
             {views.map(({ slug, title, description, date }) => (
-              <li key={slug}>
+              <li key={date}>
                 <Link href={`/view/${slug}`}>
                   <div className="redd group relative w-fit text-xl font-semibold">
                     {title}
