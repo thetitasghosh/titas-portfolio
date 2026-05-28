@@ -6,7 +6,7 @@ import { social } from "@/data/navigation";
 const Footer = () => {
   return (
     <footer className="relative w-full px-6 py-32 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 tablet:px-12 desktop:px-24">
-      <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#3b82f5_100%)]"></div>
+      <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#000_100%)]"></div>
       <div className="mx-auto grid max-w-full grid-cols-1 gap-16 tablet:grid-cols-3">
         {/* LEFT — SOCIALS & CONTACT */}
         <div className="space-y-10 text-sm">
