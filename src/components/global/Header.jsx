@@ -41,7 +41,7 @@ const Header = () => {
         top: 10,
         transition: { duration: 0.5, ease: "easeInOut" },
       }}
-      className="redd Header fixed top-0 right-0 z-50 flex h-16 w-full items-center justify-between py-2 backdrop-blur-sm selection:bg-neutral-100"
+      className="redd Header fixed right-0 top-0 z-50 flex h-16 w-full items-center justify-between py-2 backdrop-blur-sm selection:bg-neutral-100"
     >
       <div
         id="container"
@@ -53,7 +53,8 @@ const Header = () => {
               href={"/"}
               className="flex size-full items-center justify-center text-xl font-semibold"
             >
-              <SvgTextTitas />
+              <span className="capitalize">titas ghosh</span>
+              {/* <SvgTextTitas /> */}
             </Link>
           </div>
           <div id="menu-desktop" className="hidden gap-5 laptop:flex">
@@ -77,7 +78,7 @@ const Header = () => {
           </div>
           <div
             id="menu-mobile"
-            className="redd flex h-11 items-center justify-center laptop:hidden"
+            className="redd flex h-11 items-center justify-center mix-blend-difference laptop:hidden"
           >
             <Button
               className="group bg-transparent text-black"
@@ -115,10 +116,15 @@ const Header = () => {
             </Button>
           </div>
         </div>
-        <div className="redd 00 flex size-full flex-col items-end justify-center gap-2 overflow-hidden pr-5">
+        <div className="redd 00 flex size-full flex-col items-end justify-center gap-2 overflow-hidden pr-5 mix-blend-difference">
           {nav.map((data, i) => {
             return (
-              <Link onClick={() => setOpen(!open)} href={data.route} key={i}>
+              <Link
+                onClick={() => setOpen(!open)}
+                href={data.route}
+                key={i}
+                className="mix-blend-difference"
+              >
                 {data.label}
               </Link>
             );

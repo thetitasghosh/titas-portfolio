@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 // import path from "path";
 
-const SVG = () => {
+const SVG = ({ fill = "#000" }) => {
   // const pathRefs = useRef([]);
   // const [lengths, setLengths] = useState([]);
   // useEffect(() => {
@@ -99,7 +99,7 @@ const SVG = () => {
           d={path.d} // Corrected Syntax
           stroke="white"
           strokeWidth="1"
-          fill={"#000"}
+          fill={fill}
           custom={i}
           // fill={"none"}
           // strokeLinecap="round"

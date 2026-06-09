@@ -4,7 +4,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useLayoutEffect } from "react";
 import WorkPhilosophySection from "../sections/WorkPhilosophySection";
-
+import SVG from "@/lib/helper/SVG";
 const AboutPageTop = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -35,7 +35,7 @@ const AboutPageTop = () => {
             <span className="block text-6xl font-semibold tracking-tight text-neutral-900 tablet:text-7xl desktop:text-8xl">
               TITAS
             </span>
-            <span className="block pl-10 text-6xl font-semibold tracking-tight text-blue-500 tablet:text-7xl desktop:text-8xl">
+            <span className="block pl-10 text-6xl font-semibold italic tracking-tight text-blue-500 tablet:text-7xl desktop:text-8xl">
               GHOSH
             </span>
           </h1>
@@ -53,6 +53,9 @@ const AboutPageTop = () => {
             priority
             className="object-cover object-center"
           />
+          <div className="redd absolute -bottom-28 -right-4 z-50">
+            <SVG fill="#fff" />
+          </div>
         </div>
         {/* RIGHT — IMAGE + MARKER */}
         <div className="about-anim redd relative hidden items-end justify-center laptop:flex laptop:h-[70%]">
