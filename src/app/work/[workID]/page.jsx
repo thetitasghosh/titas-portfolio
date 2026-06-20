@@ -37,7 +37,9 @@ export default function ItemPage({ params }) {
     <div
       className={cn(
         "flex min-h-screen w-full items-center justify-center px-5 pt-16",
-        // workitem.color === "yourmaker"
+        // workitem.color === "yourmaker" 
+
+        
         //   ? "via-yourmaker to-030% bg-gradient-to-tl from-white from-20% to-white"
         //   : "bg-white",
       )}

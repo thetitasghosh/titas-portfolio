@@ -13,7 +13,8 @@ const WorkListPage = () => {
       {WORKS.map((data, i) => {
         return (
           <Link key={i} href={`/work/${data.slug}`}>
-            {/* <Cursor title={data.title}> */}
+            {/* <Cursor title={data.title}>  ddd*/}
+
             <WorkFrame
               date={data.date}
               service={data.service}
