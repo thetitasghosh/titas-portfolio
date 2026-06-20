@@ -1,10 +1,8 @@
+// @ts-check
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    // remotePatterns: [
-    //   { hostname: "gxvexicguxtddkwzyser.supabase.co", protocol: "https" },
-    // ],
-  },
+  /* config options here */
 };
 
-export default nextConfig;
+module.exports = nextConfig;
