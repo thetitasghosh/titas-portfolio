@@ -1,16 +1,14 @@
 "use client";
 import { cn } from "@/lib/utils";
-import gsap from "gsap";
-import Image from "next/image";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 
 const WorkFrameComingSoon = () => {
   return (
-    <div id="work" className="WorkFrameComingSoon size-full">
+    <div id="work" className="WorkFrameComingSoon space-full">
       <div
         id="work-frame"
         className={cn(
-          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28`,
+          `redd b relative h-60 w-full p-5 shadow laptop:h-full laptop:p-28 tablet:h-96`,
           {
             "to-030% bg-gradient-to-tr from-white from-20% via-neutral-200 via-50% to-white": true,
           },
@@ -24,12 +22,14 @@ const WorkFrameComingSoon = () => {
         </div>
         <div
           id="work-cover"
-          className="redd h-full w-full overflow-hidden py-5"
+          className="redd h-full w-full overflow-hidden rounded-md py-5"
         >
-          <div
-            style={{ width: 1980, height: 450 }}
-            className="redd size-full animate-pulse bg-neutral-300"
-          ></div>
+          <svg
+            viewBox="0 0 1980 1080"
+            className="size-full animate-pulse rounded bg-neutral-200/60 dark:bg-neutral-800/60"
+            width={1980}
+            height={1080}
+          />
         </div>
       </div>
     </div>

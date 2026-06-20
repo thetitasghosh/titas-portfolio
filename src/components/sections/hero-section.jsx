@@ -43,7 +43,7 @@ const HeroSection = () => {
         {/* Small Intro */}
         <div>
           <p className="HeroText text-sm uppercase tracking-widest text-neutral-900">
-            Hi there! this is
+            Hi there! this is 
           </p>
           <p className="HeroText mb-4 text-xl font-semibold text-neutral-950">
             Titas <span className="text-neutral-700">Ghosh</span>
